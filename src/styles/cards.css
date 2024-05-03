@@ -1,0 +1,204 @@
+/* .card-container {
+    width: 250px;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+  
+  .card .front-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    
+  } */
+  .cards-palestrantes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+  }
+  .card-container {
+    width: 250px;
+    height: 350px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: relative;
+  }
+  
+  .card .front-content{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+  }
+  
+  .card .palestrante {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .card .nome-palestrante {
+    font-size: 26px;
+    width: 220px;
+    display: flex;
+    font-weight: 700;
+    opacity: 1;
+    color: #e8e8e8;
+    background-color: #9711ff;
+    /* transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1); */
+    position: absolute;
+    top: 70%;
+    left: 20px;
+    /* transform: translate(-50%, -50%); */
+    z-index: 2;
+    text-align: center;
+    padding: 5px;
+  
+    
+  }
+  .card .info-palestrante{
+    font-size: 18px;
+    top: 90%;
+    left: 55%;
+    width: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    color: #e8e8e8;
+    background-color: #9711ff;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    position: absolute;
+    padding: 5px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  .card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    background: linear-gradient(-45deg, #9711ff 0%, #c501e2 100%);
+    color: #e8e8e8;
+    padding: 5px;
+    line-height: 1.5;
+    border-radius: 5px;
+    pointer-events: none;
+    transform: translateX(-96%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 3;
+  }
+  
+  .card .content .titulo-palestra {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .card:hover .content {
+    transform: translateY(0);
+  }
+  
+  .card:hover .front-content {
+    transform: translateX(-30%);
+  }
+  
+  .card:hover .front-content p {
+    opacity: 0;
+  }
+  
+
+  /* .card .palestrante{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .card .front-content .nome-palestrante {
+    font-size: 26px;
+    font-weight: 700;
+    opacity: 1;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 2;
+   
+  }
+  
+  .card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    color: #e8e8e8;
+    padding: 10px;
+    line-height: 1.5;
+    border-radius: 5px;
+    pointer-events: none;
+    transform: translateX(-96%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card .content .titulo-palestra {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  
+  .card:hover .content {
+    transform: translateY(0);
+  }
+  
+  .card:hover .front-content {
+    transform: translateX(-30%);
+  }
+  
+  .card:hover .front-content p {
+    opacity: 0;
+  }
+  
+   */
