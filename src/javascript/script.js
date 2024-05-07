@@ -58,3 +58,11 @@ $(document).ready(function() {
         distance: '20%'
     })
 });
+
+var hubs = document.querySelectorAll(".hub")
+
+hubs.forEach(e => {
+    e.addEventListener('click',() =>{
+        e.classList.toggle("active")
+    })
+})

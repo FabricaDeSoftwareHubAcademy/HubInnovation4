@@ -19,7 +19,7 @@
 }
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -31,13 +31,18 @@ html {
 
 body {
     background-color: var(--color-neutral-2);
+    overflow-x: hidden;
 }
 
 section {
     padding: 28px 1px;
 }
-
+.link_login{
+    text-decoration: none;
+    color: #d49cff;
+}
 .btn-default {
+    text-decoration: none;
     border: none;
     display: flex;
     align-items: center;

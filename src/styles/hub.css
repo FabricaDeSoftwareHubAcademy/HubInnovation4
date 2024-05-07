@@ -5,6 +5,8 @@
     color: inherit;
     font: inherit;
     text-transform: inherit;
+   
+      font-family: "Poppins", sans-serif;
   }
   
  
@@ -18,35 +20,67 @@
     /* min-height: 100vh; */
     font:  1.25em/1.25 sans-serif;
     text-align: center;
-    width: 100vw;
+    width: 100vw; 
     /* text-transform: uppercase; */
   }
   
   .hub {
     overflow: hidden;
-    padding-bottom: 1rem;
+    border-radius: 5px;
+    /* padding-bottom: 1rem; */
     backface-visibility: hidden;
     transform: perspective(25em);
     background: #7635a8 content-box;
     filter: drop-shadow(4px 4px 13px);
     animation: card 1s ease-out var(--dt0) backwards, cost 1s var(--dt4) backwards;
     width: 300px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 50% 100%, 0 calc(100% - 1rem));
+    
+    max-height: 250px;
+    height: 250px;
+    transition: .5s;
+    cursor: pointer;
   }
- 
+
+  .hub.active  {
+
+    height: 600px;
+    max-height: 600px;
+  }
+  .hub:hover{
+    background-color: var(--color-neutral-1);
+  }
+  .hub.active > .hub-cab{ 
+    height: 430px;
+    max-height: 430px;
+    opacity: 1;
+  }
+  
+  
+  
+  
   
   @keyframes card {
     0% {
       transform: perspective(25em) rotatey(0.5turn);
     }
   }
+  
   .hub-cab {
     grid-gap: 1rem;
     padding: 2rem 0.5em 1rem;
     background: linear-gradient(var(--grad));
     color: #fff;
     
+     
+    opacity: 0;
+    max-height: 0;
+    transition: .5s;
     animation: head 1s ease-out var(--dt1) backwards;
+    
   }
+   
+
   /*  */
   .hub-cab::after {
     height: 4px;
@@ -56,14 +90,16 @@
     /* content: ""; */
   }
 
-  
+  section.cadastro{
+     position: relative;
+     z-index: 9;
+  }
   
   section {
     margin-bottom: -1rem;
     border-bottom: solid 1rem transparent;
     background-color: inherit;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1rem), 50% 100%, 0 calc(100% - 1rem));
-  }
+    }
   
   .btn-cadastro {
     place-content: center;
@@ -76,4 +112,7 @@
   }
   
   
+.btn-cadastro strong{
+  color: var( --color-primary-2);
+}
   

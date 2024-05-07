@@ -88,7 +88,16 @@
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-
+.card .content h1{
+  font-size: 20px;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  color: var(--color-primary-1);
+  width: 100%;
+  height: 30px;
+  background-color: var(--color-neutral-1);
+}
 .card .content {
   position: absolute;
   top: 0;
