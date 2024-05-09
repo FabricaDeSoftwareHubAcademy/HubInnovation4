@@ -91,4 +91,7 @@ header {
     .fa-solid{
         color: #fff;
     }
+    .arrow_direction{
+        color: black;
+    }
 }

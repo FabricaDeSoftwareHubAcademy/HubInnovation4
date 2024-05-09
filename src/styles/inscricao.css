@@ -26,7 +26,7 @@
     left: 5%;
     height: 400px;
     width: 400px;
-    background-color: var(--color-neutral-1);
+    background-color: rgb(35 4 149);
     border-radius: 100%;
  
 }
@@ -283,7 +283,7 @@
     padding: 0 25px;
     color: white;
     box-shadow: 2px 2px 2px 2px #37003f;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: .3s;
 }
 .buttons_content button:hover{
@@ -295,7 +295,7 @@
 
  
 input[type="checkbox"] {
-    cursor: pointer;
+    /* cursor: pointer; */
     -webkit-appearance: none;
     appearance: none;
     background-color: rgb(25, 25, 25);
@@ -394,7 +394,7 @@ input[type="checkbox"] {
 }
 
 .btn_x_modal{
-    cursor: pointer;
+    /* cursor: pointer; */
     font-size: 20px;
 }
 

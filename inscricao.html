@@ -17,10 +17,18 @@
     
     <script src="node_modules/animejs/lib/anime.min.js"></script>
     <script defer src="src/javascript/inscricao.js"></script>
+    <script defer src="src/javascript/cursor.js"></script>
 
+    
 </head>
 <body class="body_inscricao">
-
+<!-- cursor effect  -->
+    <div id="cursor">
+        <div class="content_cursor"> 
+        <i class="fa-solid fa-arrow-right arrow_direction"></i>
+        </div> 
+  </div>
+  <!-- ===================== -->
     <div class="modal_inscricao">
         <div class="lineModal"></div>
         <div class="areaX"> 
@@ -126,8 +134,8 @@
                         </div>
                         
                         <div class="buttons_content">
-                            <button id="cancel_button">Voltar</button>
-                            <button onclick="">Enviar</button>
+                            <button class="clicavel" id="cancel_button">Voltar</button>
+                            <button class="clicavel" onclick="">Enviar</button>
                         </div>
 
                     </form>

@@ -90,6 +90,7 @@ function allRed(){
     ]
     let i = 0
     balls.forEach(e => { 
+      
         anime({
             targets: e,
             translateX: anime.random(-100,100),
@@ -97,8 +98,28 @@ function allRed(){
             background: colors[i],
             direction: "alternate"
         }) 
+         
+        
         i++
     })
+
+    setTimeout(() => {
+
+        let ball5 = document.querySelector(".ball5")
+        let ball1 = document.querySelector(".ball1")
+        let ball2 = document.querySelector(".ball2")
+        let ball3 = document.querySelector(".ball3")
+        let ball4 = document.querySelector(".ball4")
+
+        ball5.style.background = "#0a0013"
+        ball1.style.background = "#9711ff"
+        ball2.style.background = "#230495"
+        ball3.style.background = "#c501e2"
+        ball4.style.background = "#d49cff"
+ 
+    },3000)
+    
+    
     
 }
 
@@ -122,6 +143,23 @@ function allGreen(){
         }) 
         i++
     })
+
+
+    setTimeout(() => {
+
+        let ball5 = document.querySelector(".ball5")
+        let ball1 = document.querySelector(".ball1")
+        let ball2 = document.querySelector(".ball2")
+        let ball3 = document.querySelector(".ball3")
+        let ball4 = document.querySelector(".ball4")
+
+        ball5.style.background = "#0a0013"
+        ball1.style.background = "#9711ff"
+        ball2.style.background = "#230495"
+        ball3.style.background = "#c501e2"
+        ball4.style.background = "#d49cff"
+ 
+    },3000)
     
 }
 

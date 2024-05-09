@@ -15,7 +15,7 @@
 
     --color-neutral-0: #fff;
     --color-neutral-1: #1d1d1d;
-    --color-neutral-2: #1d0233;
+    --color-neutral-2: #0a0013;
 }
 
 * {
@@ -23,6 +23,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none;
 }
 
 html {
@@ -39,20 +40,20 @@ section {
 }
 .link_login{
     text-decoration: none;
-    color: #d49cff;
+    color: #d49cff; 
 }
 .btn-default {
     text-decoration: none;
     border: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: var(--color-primary-5);
+    justify-content: center; 
+    border: 2px solid;
     border-radius: 12px;
     padding: 10px 14px;
     font-weight: 600;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    /* cursor: pointer; */
     transition: background-color .3s ease;
 }
 
@@ -84,3 +85,40 @@ section {
     box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.1);
 }
 
+.content_cursor{
+    
+    height: 16px;
+    width: 16px;
+    background-color: var(--color-primary-4);
+    border-radius: 100%; 
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.content_cursor.marcavel{
+
+    background-color: white;
+
+}
+.content_cursor .arrow_direction{
+    display: none;
+}
+
+.content_cursor.active{ 
+    height: 50px;
+    width: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;   
+}
+.content_cursor.active .arrow_direction{
+    display: block;
+} 
+
+#cursor{
+    transform: translate(-50%,-50%);
+    position: fixed;
+    pointer-events: none; 
+    z-index: 99999;
+}
