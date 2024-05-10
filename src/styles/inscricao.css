@@ -398,7 +398,15 @@ input[type="checkbox"] {
     font-size: 20px;
 }
 
-
+.about_area h1{
+    text-align: center;
+    color: white;
+    width: 90%;
+    justify-self: center;
+    align-self: center;
+    font-size: 22px;
+    margin: 0 auto;
+}
 @media (max-width: 1207px) {
     .left_side{
         width: 100%;

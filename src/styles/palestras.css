@@ -1,40 +1,32 @@
-#palestras{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-    margin-top: 30px;
-}
+
 .title-palestras{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 30px;
+    z-index: 2;
+
 }
 .cards-palestrantes{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  gap: 20px;
-  justify-content: space-evenly;
-  margin-top: 30px;
+  gap: 35px;
+  justify-content: space-around;
+  padding: 70px 0px 350px 30px;
+   
+    
 }
 .card-container {
   width: 250px;
   height: 350px;
   position: relative;
   border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  box-shadow: 5px 10px 20px #322146;
+    overflow: hidden;
 }
 
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  position: relative;
-}
+
 
 .card .front-content{
   width: 100%;
@@ -54,6 +46,7 @@
   top: 0;
   left: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 .card .nome-palestrante {
@@ -91,32 +84,49 @@
 .card .content h1{
   font-size: 20px;
   font-weight: 900;
+  
   position: absolute;
-  top: 0;
+  top:  0px;
   color: var(--color-primary-1);
   width: 100%;
-  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  z-index: 9;
   background-color: var(--color-neutral-1);
+}
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card .content {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+   
+  width: 0%;
+  height: 0%;
+  overflow: hidden;
+   
+  transition: .2s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   gap: 10px;
-  background: linear-gradient(-45deg, #9711ff 0%, #c501e2 100%);
-  color: #e8e8e8;
-  padding: 5px;
+  /* background: linear-gradient(-45deg, #38016365 0%, #67017734 70%), */
+  /* linear-gradient(45deg, #63010181 0%, #67017754 70%); */
+  /* backdrop-filter: blur(15px); */
+  color: #e8e8e8; 
   line-height: 1.5;
   border-radius: 5px;
   pointer-events: none;
-  transform: translateX(-96%);
+   
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   z-index: 3;
 }
@@ -127,13 +137,80 @@
 }
 
 .card:hover .content {
-  transform: translateY(0);
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.274);
+  /* transform: translateY(0); */
 }
 
 .card:hover .front-content {
-  transform: translateX(-30%);
+  /* transform: translateX(-30%); */
 }
 
 .card:hover .front-content p {
-  opacity: 0;
+  /* opacity: 0; */
+}
+.blocoFundo{
+  position: absolute; 
+  height:250px;
+  width: 250px; 
+  background-color: rgba(0, 0, 0, 0);
+}
+.blocoFundo.active{
+  
+  backdrop-filter: blur(20px);
+}
+.titulo-palestra2{
+  z-index: 9;
+  font-size: 20px;
+  font-weight: 700;
+}
+.ver_palestra{
+  position: relative;
+  padding: 10px;
+  border-radius: 10px 20px;
+  border: 2px solid var(--color-primary-1);
+  position: absolute;
+  bottom: 50px;
+  z-index: 9;
+  overflow: hidden;
+}
+
+.bubble{
+  height: 300px;
+  
+  width: 300px;
+  background-color: rebeccapurple;
+  position: absolute;
+  left: 40%;
+  border-radius: 100%;
+  transition: 5s linear;
+  /* background: radial-gradient(circle, #ff0000, #ff6600); Gradiente vermelho para laranja */
+    /* box-shadow: 0 0 50px 20px rgba(255, 102, 0, 0.7); Sombra laranja */
+    /* border-radius: 50%; */
+    /* transform: rotate(20deg) scaleY(1.1);  */
+
+  top: 0;
+  /* 50px */
+}
+.area_palestras_cards{
+  backdrop-filter: blur(200px); 
+}
+
+#palestras{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin-top: 30px;
+  overflow: hidden ;
+  position: relative; 
+}
+
+@media (max-width:550px) {
+
+  .cards-palestrantes{
+    padding: 0;
+  }
 }

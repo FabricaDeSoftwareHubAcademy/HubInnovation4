@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     $(window).on('scroll', function () {
         const header = $('header');
-        const scrollPosition = $(window).scrollTop() - header.outerHeight();
+        const scrollPosition = $(window).scrollTop() - header.outerHeight() + 102;
 
         let activeSectionIndex = 0;
 
@@ -20,7 +20,8 @@ $(document).ready(function() {
         }
 
         sections.each(function(i) {
-            const section = $(this);
+            const section = $(this); 
+             
             const sectionTop = section.offset().top - 96;
             const sectionBottom = sectionTop+ section.outerHeight();
 
@@ -29,7 +30,7 @@ $(document).ready(function() {
                 return false;
             }
         })
-
+        console.log(navItems[activeSectionIndex])
         navItems.removeClass('active');
         $(navItems[activeSectionIndex]).addClass('active');
     });
@@ -68,3 +69,21 @@ hubs.forEach(e => {
 })
 
  
+const observer = new IntersectionObserver(
+    (entries) => {
+
+    entries.forEach((entry) => {
+
+    if(entry.isIntersecting){
+        entry.target.classList.add('show');
+    }
+    else{
+        entry.target.classList.remove('show')
+    }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.move')
+hiddenElements.forEach((element) => {
+    observer.observe(element)
+})

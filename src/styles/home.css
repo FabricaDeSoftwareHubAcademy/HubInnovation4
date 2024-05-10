@@ -4,7 +4,7 @@
     min-height: calc(100vh - 91px);
     position: relative; 
     pointer-events: none;
-   
+   overflow: hidden;
 }
 
 
@@ -56,13 +56,18 @@ svg{
     animation: color_anim 1s infinite 0.4s;
 
 }
-  
+.setas{
+    position: relative;
+    z-index: 2;
+}
 .btn-content #arrow-icon-three {
+    position: absolute; 
     animation: color_anim 1s infinite 0.2s;
 }
  
 .area_cubeA{
-     
+    min-width: 250px;
+    min-height: 250px;
     height: 30vw;
     width: 30vw;
     left: -10%;
@@ -76,11 +81,11 @@ svg{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 120px;
-    min-width: 120px;
+     
 }
 .area_cubeB{
-     
+    min-width: 300px;
+    min-height: 300px;
     height: 35vw;
     width: 35vw;
     right: -5%;
@@ -94,8 +99,7 @@ svg{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 150px;
-    min-width: 150px;
+    
  
 }
 
@@ -159,7 +163,7 @@ svg{
 
 @media screen and (max-width: 1170px) {
     #home {
-        min-height: 100%;
+        min-height: 100vh;
         padding-top: 0px;
     }
 
@@ -173,10 +177,18 @@ svg{
 @media  (max-width: 550px) {
     .area_cubeA{
         border-radius: 40px;
+        top: 40%;
+        min-width: 180px;
+        min-height: 180px;
          
     }
+
     .area_cubeB{
+        
         border-radius: 40px;
+        right: -15%;
+        min-width: 230px;
+        min-height: 230px;
          
     }
     
