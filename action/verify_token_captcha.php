@@ -26,9 +26,6 @@ $url = 'https://www.google.com/recaptcha/api/siteverify';
 $response = file_get_contents($url, false, stream_context_create($options));
 
 echo($response);
-// Decodifica a resposta JSON
-
-// $result = json_decode($response);
 
  
 ?>
