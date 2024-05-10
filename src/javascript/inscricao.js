@@ -177,8 +177,11 @@ function activeModal(text){
  
 
 var form = document.querySelector("#form_inscricao")
-form.addEventListener("submit",(e) => {
-    e.preventDefault()
+form.addEventListener("submit",async (e) => {
+    
+    e.preventDefault() 
+ 
+
 
     let nome_input = document.querySelector("#nome_input")
     let email_input = document.querySelector("#email_input")
@@ -236,9 +239,37 @@ form.addEventListener("submit",(e) => {
         activeModal("LGPD 2 não marcada, marque e tente novamente!") 
         return
     }
-    allGreen()
-    activeModal("Inscrição Realizada!") 
-    // CADASTRAR AQUI COM O BACK END - L
+    
+    let tmp_token = grecaptcha.getResponse(captchaElement) 
+    // https://www.google.com/recaptcha/api/siteverify
+    
+    const data = { 
+        response: tmp_token
+    };
+
+    let data_res = await fetch("action/verify_token_captcha.php",{
+        method:"POST",
+        body: new URLSearchParams(data)
+    })
+
+    let res = await data_res.json()  
+    if(res.success){
+        
+        // CADASTRAR AQUI COM O BACK END - L
+        allGreen()
+        activeModal("Inscrição Realizada!") 
+
+    }else{
+        allRed()
+        grecaptcha.reset(captchaElement);
+        activeModal("Efetue o reCAPTCHA para prosseguir") 
+
+    }
+
+
+
+   
+    
 })
 
 document.querySelector("#cancel_button").addEventListener("click",() => {window.location.href = "./index.html"})

@@ -19,7 +19,23 @@
     <script defer src="src/javascript/inscricao.js"></script>
     <script defer src="src/javascript/cursor.js"></script>
 
+     
+    <script>
+
+        var captchaElement
+        var onloadCaptcha = () => {
+            console.log("teste")
+            captchaElement = grecaptcha.render('localCaptcha', {
+                'sitekey' : '6LfjTtgpAAAAAGj0_nSkB7RCNsvZ8HvbZMxe3GW7',
+                'theme':"dark"
+            });
+        }
+
+    </script>
     
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCaptcha&render=explicit" async defer></script>
+ 
+
 </head>
 <body class="body_inscricao">
 <!-- cursor effect  -->
@@ -76,10 +92,10 @@
             </div>
 
             <div class="right_side">
-                <div class="content_right_side">
+                <form class="content_right_side" id="form_inscricao">
                     <h1 class="title_inscreva "  >INSCREVA-SE</h1>
                     <!-- DATA NASCIMENTO | SEXO | DUAS CHECKBOX -->
-                    <form class="inputs" id="form_inscricao" >
+                    <div class="inputs"  >
 
                         <div class="input_area">
                             <input required maxlength="100"  class="input" id="nome_input" type="text"> 
@@ -132,15 +148,21 @@
                             <input type="checkbox" name="" id="lgpd2">
                             <Label>Você concorda em receber informações a respeito de cursos relacionados ao Senac.</Label>
                         </div>
-                        
-                        <div class="buttons_content">
-                            <button class="clicavel" id="cancel_button">Voltar</button>
-                            <button class="clicavel" onclick="">Enviar</button>
-                        </div>
+                        <div id="localCaptcha"></div>
+                       
 
-                    </form>
+                    </div>
 
-                </div>
+
+                    <div class="buttons_content">
+                        <button class="clicavel" id="cancel_button">Voltar</button>
+                         
+                        <button class=" clicavel"  
+                             > 
+                            Cadatrar
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

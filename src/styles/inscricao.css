@@ -1,6 +1,18 @@
 *{
     font-family: "Poppins", sans-serif;
 }
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+    background-color: transparent;
+}
+
+/* Estilo do botão de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #0f0f0f65; /* Cor do botão de rolagem */
+    border-radius: 6px; /* Raio da borda do botão de rolagem */
+}
+
 .balls{
     min-height: 100vh;
     min-width: 100vw;
@@ -187,6 +199,10 @@
     text-align: center; 
 }
 .inputs{ 
+    padding: 10px;
+    max-height: 450px;
+    overflow-y: scroll;
+    height: 100%;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
@@ -198,7 +214,7 @@
     width: 100%;
 }
 .align_input_top{ 
-    transform: translateY(-20px);
+    transform: translateY(-14px);
 }
 .input_area .input{
     border: 2px solid white;
@@ -227,17 +243,20 @@
      
     left: 2px;
 }
-
+#localCaptcha{
+    position: relative;
+    transform: translateY(-30px);
+}
 .twoCollumn{
     display: flex;
     width: 100%;
     justify-content: space-between;
     gap: 30px;
-    transform: translateY(-40px);
+    transform: translateY(-30px);
      
 }
 .aling_two_40{
-    transform: translateY(-60px);
+    transform: translateY(-50px);
 }
 .input_area_genero{
     width: 100%;
