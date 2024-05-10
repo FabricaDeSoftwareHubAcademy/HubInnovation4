@@ -197,6 +197,9 @@
 .input_area{
     width: 100%;
 }
+.align_input_top{ 
+    transform: translateY(-20px);
+}
 .input_area .input{
     border: 2px solid white;
     width: 100%;
@@ -230,7 +233,11 @@
     width: 100%;
     justify-content: space-between;
     gap: 30px;
+    transform: translateY(-40px);
      
+}
+.aling_two_40{
+    transform: translateY(-60px);
 }
 .input_area_genero{
     width: 100%;
@@ -262,6 +269,7 @@
     align-items: center;
     justify-content: start;
     gap: 10px;
+    transform: translateY(-40px);
 }
 
  
