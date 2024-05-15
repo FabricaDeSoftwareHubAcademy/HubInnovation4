@@ -50,22 +50,22 @@ var timeoutWrite
     "#9711ff"]
 
      
-    var bubble = document.querySelectorAll(".bubble")
-    var i = 0;
-    bubble.forEach((e) => {
-        setInterval(() =>{
+    // var bubble = document.querySelectorAll(".bubble")
+    // var i = 0;
+    // bubble.forEach((e) => {
+    //     setInterval(() =>{
           
             
-            const altura = document.querySelector(".area_palestras_cards").offsetHeight + 50;
-            const largura = window.innerWidth
+    //         const altura = document.querySelector(".area_palestras_cards").offsetHeight + 50;
+    //         const largura = window.innerWidth
         
-            const distanciaAltura = altura  /2
-            const distanciaLargura = largura 
+    //         const distanciaAltura = altura  /2
+    //         const distanciaLargura = largura 
              
-            e.style.transform = "translateX("+anime.random(-distanciaLargura,distanciaLargura)+"px) "+ "translateY("+anime.random(0,distanciaAltura)+"px) rotate("+anime.random(0,400)+"deg) scaleY("+anime.random(0.5,2)+")"
-            e.style.background =  COLORS[Math.floor(Math.random() * COLORS.length)]
+    //         e.style.transform = "translateX("+anime.random(-distanciaLargura,distanciaLargura)+"px) "+ "translateY("+anime.random(90,distanciaAltura)+"px) rotate("+anime.random(0,400)+"deg) scaleY("+anime.random(0.5,2)+")"
+    //         e.style.background =  COLORS[Math.floor(Math.random() * COLORS.length)]
 
-        },5000)
+    //     },5000)
        
-    }) 
+    // }) 
  

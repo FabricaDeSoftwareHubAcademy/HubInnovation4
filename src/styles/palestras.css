@@ -13,7 +13,7 @@
   width: 100%;
   gap: 35px;
   justify-content: space-around;
-  padding: 70px 0px 350px 30px;
+  padding: 70px 0px 150px 30px;
    
     
 }
@@ -177,7 +177,7 @@
   overflow: hidden;
 }
 
-.bubble{
+/* .bubble{
   height: 300px;
   
   width: 300px;
@@ -185,18 +185,39 @@
   position: absolute;
   left: 40%;
   border-radius: 100%;
-  transition: 5s linear;
-  /* background: radial-gradient(circle, #ff0000, #ff6600); Gradiente vermelho para laranja */
-    /* box-shadow: 0 0 50px 20px rgba(255, 102, 0, 0.7); Sombra laranja */
-    /* border-radius: 50%; */
-    /* transform: rotate(20deg) scaleY(1.1);  */
+  transition: 5s linear; 
+  top: 0; 
+  animation: movingBubble 2s infinite alternate-reverse  ;
+}
 
-  top: 0;
-  /* 50px */
-}
-.area_palestras_cards{
+@keyframes movingBubble {
+  0% {
+    transform: translate(10%, 30%) scale(2);
+  }
+  20% {
+    transform: translate(0%, 30%) scale(1.2);
+  }
+  40% {
+    transform: translate(-50%, 70%) scale(1.4);
+  }
+  60% {
+    transform: translate(70%, -80%) scale(1);
+  }
+  80% {
+    transform: translate(90%, 70%) scale(1);
+  }
+  100% {
+    transform: translate(-20%, 10%) scale(1.4);
+  }
+} */
+
+
+
+
+
+/* .area_palestras_cards{
   backdrop-filter: blur(200px); 
-}
+} */
 
 #palestras{
   display: flex;

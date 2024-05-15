@@ -15,7 +15,8 @@
 
 .balls{
     min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw;
+    
     height: 100%; 
     position: absolute;
     top: 0;
@@ -70,8 +71,8 @@
 }
 .ball5{
 
-    height: 1500px;
-    width: 1500px;
+    height: 100vw;
+    width: 100vw;
     background-color: var(--color-neutral-2);
     border-radius: 100%;
     left: -50%;
@@ -102,6 +103,8 @@
 }
 
 .body_inscricao{ 
+    max-width: 100vw;
+    width: 100vw;
 }
 
 .left_side{
@@ -198,10 +201,11 @@
     width: 100%;
     text-align: center; 
 }
-.inputs{ 
-    padding: 10px;
+.inputs{  
+    padding: 20px 10px;
     max-height: 450px;
     overflow-y: scroll;
+    overflow-x: hidden;
     height: 100%;
     margin: 20px auto;
     display: flex;
@@ -257,6 +261,7 @@
 }
 .aling_two_40{
     transform: translateY(-50px);
+    flex-wrap: wrap;
 }
 .input_area_genero{
     width: 100%;
@@ -264,6 +269,8 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    max-width: 279px;
+    min-width: 200px;
 }
 .input_select_gen{
     height: 42px;
@@ -440,6 +447,7 @@ input[type="checkbox"] {
         padding: 15px;
         min-width: 0;
         max-height: none;
+        height: auto;
     }
     .right_side{
         min-width: 0;
@@ -485,6 +493,14 @@ input[type="checkbox"] {
 }
 
 
+@media (max-width: 1340px) {
+
+    .input_area_genero{
+        max-width: none;
+    }
+
+}
+
 @media (max-width: 600px) {
     .ball1{
         left: 10%;
@@ -499,6 +515,11 @@ input[type="checkbox"] {
         bottom: -30%;
     }
     .title_inscreva{
+        margin-top: 15px;
         font-size: 35px;
     }
+    .right_side{
+        padding: 0;
+    }
+   
 }
