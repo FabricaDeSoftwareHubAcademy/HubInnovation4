@@ -42,30 +42,72 @@ var timeoutWrite
         }
     )
     
-    const COLORS = ["#fff9ea",
-    "#d49cff",
-    "#a35ed9",
-    "#c501e2",
-    "#7635a8",
-    "#9711ff"]
+const COLORS = [
+"#fff9ea",
+"#d49cff",
+"#a35ed9",
+"#c501e2",
+"#7635a8",
+"#9711ff"]
 
+var validAttribute = (e,a ) => {
+    if(e.hasAttribute(a)){
+        if(!isNaN(e.getAttribute(a))){
+            return true
+        }
+    }
+    return false
+}
+
+document.addEventListener("DOMContentLoaded",(e) => {
+
+    var imgs_palestrante = document.querySelectorAll(".imgs_palestrante")
+    imgs_palestrante.forEach(e => {
+        var imgs = e.querySelectorAll("img")
      
-    // var bubble = document.querySelectorAll(".bubble")
-    // var i = 0;
-    // bubble.forEach((e) => {
-    //     setInterval(() =>{
-          
-            
-    //         const altura = document.querySelector(".area_palestras_cards").offsetHeight + 50;
-    //         const largura = window.innerWidth
-        
-    //         const distanciaAltura = altura  /2
-    //         const distanciaLargura = largura 
-             
-    //         e.style.transform = "translateX("+anime.random(-distanciaLargura,distanciaLargura)+"px) "+ "translateY("+anime.random(90,distanciaAltura)+"px) rotate("+anime.random(0,400)+"deg) scaleY("+anime.random(0.5,2)+")"
-    //         e.style.background =  COLORS[Math.floor(Math.random() * COLORS.length)]
+        imgs.forEach(e => {
+            e.style.opacity = 0
+        })
+        imgs[0].style.opacity = 1
+    })
+    
 
-    //     },5000)
-       
-    // }) 
+})
  
+var moveCard = (e,side) => {
+     
+    let card_container = e.closest(".card-container") 
+    let imgs_palestrantes = card_container.querySelector(".imgs_palestrante")
+    let imgs = imgs_palestrantes.querySelectorAll("img") 
+
+    if(!validAttribute(imgs_palestrantes,"data-carousel")){
+        imgs_palestrantes.setAttribute("data-carousel",0)
+    }
+    if(side == "right"){ 
+        imgs_palestrantes.setAttribute("data-carousel", parseInt(imgs_palestrantes.getAttribute("data-carousel"))+1) 
+        if(parseInt(imgs_palestrantes.getAttribute("data-carousel"))  >= imgs.length ){
+            imgs_palestrantes.setAttribute("data-carousel",0)
+        } 
+    }else{
+        imgs_palestrantes.setAttribute("data-carousel", parseInt(imgs_palestrantes.getAttribute("data-carousel"))-1)
+        if(parseInt(imgs_palestrantes.getAttribute("data-carousel"))  < 0){
+            imgs_palestrantes.setAttribute("data-carousel",imgs.length - 1)
+        } 
+    }
+ 
+  
+    
+    let index_carousel =  parseInt(imgs_palestrantes.getAttribute("data-carousel"))
+   
+    for (let index = 0; index < imgs.length; index++) {
+        if(index == index_carousel){
+            imgs[index].style.opacity = "1"
+            continue
+        } 
+        imgs[index].style.opacity = "0"
+        
+    }
+
+    
+} 
+

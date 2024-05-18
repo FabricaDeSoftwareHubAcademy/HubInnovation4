@@ -45,3 +45,14 @@ inputs.forEach(e => {
         cursorMove.querySelector(".content_cursor").classList.remove("marcavel") 
     }) 
 })
+
+var marcaveis = document.querySelectorAll(".marcavel")
+marcaveis.forEach(e => {
+
+    e.addEventListener("mouseenter",(e) => { 
+        cursorMove.querySelector(".content_cursor").classList.add("marcavel") 
+    })
+    e.addEventListener("mouseleave",(e) => { 
+        cursorMove.querySelector(".content_cursor").classList.remove("marcavel") 
+    }) 
+})

@@ -29,8 +29,7 @@ $(document).ready(function() {
                 activeSectionIndex = i;
                 return false;
             }
-        })
-        console.log(navItems[activeSectionIndex])
+        }) 
         navItems.removeClass('active');
         $(navItems[activeSectionIndex]).addClass('active');
     });
