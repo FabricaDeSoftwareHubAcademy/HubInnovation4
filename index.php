@@ -113,13 +113,7 @@ foreach ($palestras as $palestra) {
 
 <body>
 
-  <!-- cursor effect  -->
-  <div id="cursor">
-    <div class="content_cursor">
-      <i class="fa-solid fa-arrow-right arrow_direction"></i>
-    </div>
-  </div>
-  <!-- ===================== -->
+   
 
   <header>
     <nav id="navbar">

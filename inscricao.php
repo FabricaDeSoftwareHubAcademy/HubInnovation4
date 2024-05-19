@@ -179,14 +179,7 @@ if(isset($_POST['cadastrar']))
  
 
 </head>
-<body class="body_inscricao">
-<!-- cursor effect  -->
-    <div id="cursor">
-        <div class="content_cursor"> 
-        <i class="fa-solid fa-arrow-right arrow_direction"></i>
-        </div> 
-  </div>
-  <!-- ===================== -->
+<body class="body_inscricao"> 
     <div class="modal_inscricao">
         <div class="lineModal"></div>
         <div class="areaX"> 
