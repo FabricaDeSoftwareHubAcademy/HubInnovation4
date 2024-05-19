@@ -24,7 +24,7 @@
   
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-      ©2023 - Hub Innovation
+      ©2024 - Hub Innovation
     </div>
     <!-- Copyright -->
   </footer>

@@ -12,8 +12,8 @@ class Database{
     private $conn;
     private string $local="localhost";
     private string $db="hub3";
-    private string $user = "hubinnovation2";
-    private string $password = "*38E22D5716B2B51B5C11EBD852A497C1D16A9897";
+    private string $user = "root";
+    private string $password = "";
    private $table;
 
     public function __construct($table = null){
