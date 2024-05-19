@@ -272,4 +272,4 @@ form.addEventListener("submit",async (e) => {
     
 })
 
-document.querySelector("#cancel_button").addEventListener("click",() => {window.location.href = "./index.html"})
+document.querySelector("#cancel_button").addEventListener("click",() => {window.location.href = "./index.php"})

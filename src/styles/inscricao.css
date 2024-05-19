@@ -503,6 +503,11 @@ input[type="checkbox"] {
 
 }
 
+@media (max-width: 355px) {
+    .ball1{
+        display: none;
+    }
+}
 @media (max-width: 600px) {
     .ball1{
         left: 10%;
