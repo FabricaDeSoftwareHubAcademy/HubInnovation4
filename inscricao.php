@@ -124,10 +124,9 @@ if(isset($_POST['cadastrar']))
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 }
               
-		 echo '<script language="javascript">';
-                 echo 'alert("Cadastrado realizado com sucesso!!")';
-                 echo '</script>';
-		 echo '<meta http-equiv="refresh" content="0.3; url=./index.php">';
+        //retorna Sucesso ao JS
+            $cadastro = ['success'=>'OK'];
+		    echo $cadastro;
             } 
         }
         else{
@@ -163,7 +162,7 @@ if(isset($_POST['cadastrar']))
     <script defer src="src/javascript/cursor.js"></script>
 
      
-    <script>
+    <!-- <script>
 
         var captchaElement
         var onloadCaptcha = () => { 
@@ -174,8 +173,8 @@ if(isset($_POST['cadastrar']))
         }
 
     </script>
-    
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCaptcha&render=explicit" async defer></script>
+     -->
+    <!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCaptcha&render=explicit" async defer></script> -->
  
 
 </head>
@@ -290,7 +289,7 @@ if(isset($_POST['cadastrar']))
                             <input type="checkbox" name="info" id="lgpd2">
                             <Label>Você concorda em receber informações a respeito de cursos relacionados ao Senac.</Label>
                         </div>
-                        <div id="localCaptcha"></div>
+                        <!-- <div id="localCaptcha"></div> -->
                        
 
                     </div>

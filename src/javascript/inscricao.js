@@ -15,37 +15,37 @@ function mascaraCPF(i){
  
 }
 
-function mascaraPhone(i){
+// function mascaraPhone(i){
    
-    var v = i.value;
+//     var v = i.value;
     
-    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
-        i.value = v.substring(0, v.length-1);
-       return;
-    }
+//     if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+//         i.value = v.substring(0, v.length-1);
+//        return;
+//     }
     
-    i.setAttribute("maxlength", "16");
-    if (v.length == 1) i.value = ("(" + i.value) ;
+//     i.setAttribute("maxlength", "16");
+//     if (v.length == 1) i.value = ("(" + i.value) ;
  
-    if (v.length == 3) i.value = (i.value + ") ") ;
-    if (v.length == 6) i.value = (i.value + " ") ;
+//     if (v.length == 3) i.value = (i.value + ") ") ;
+//     if (v.length == 6) i.value = (i.value + " ") ;
     
-    if (v.length == 11) i.value += "-";
+//     if (v.length == 11) i.value += "-";
  
-}
+// }
 
 
-function validarTelefone(telefone) {
-    // Expressão regular para validar o formato do telefone
-    var regex = /^\(\d{2}\)\s\d\s\d{4}-\d{4}$/;
+// function validarTelefone(telefone) {
+//     // Expressão regular para validar o formato do telefone
+//     var regex = /^\(\d{2}\)\s\d\s\d{5}-\d{4}$/;
     
-    // Testa se o telefone corresponde ao formato esperado
-    if (regex.test(telefone)) {
-        return true; // O formato é válido
-    } else {
-        return false; // O formato é inválido
-    }
-}
+//     // Testa se o telefone corresponde ao formato esperado
+//     if (regex.test(telefone)) {
+//         return true; // O formato é válido
+//     } else {
+//         return false; // O formato é inválido
+//     }
+// }
 
 
 function validarCPF(cpf) {
@@ -203,11 +203,11 @@ form.addEventListener("submit",async (e) => {
         return
     } 
 
-    if(validarTelefone(phone_input.value) == false){
-        allRed()
-        activeModal("Número de telefone inválido, reescreva no formato (xx) x xxxx-xxxx!") 
-        return
-    }
+    // if(validarTelefone(phone_input.value) == false){
+    //     allRed()
+    //     activeModal("Número de telefone inválido, reescreva no formato (xx) x xxxx-xxxx!") 
+    //     return
+    // }
     if(validarCPF(cpf_input.value) == false){
         allRed()
         activeModal("CPF inválido, reescreva e tente novamente!") 
@@ -239,36 +239,58 @@ form.addEventListener("submit",async (e) => {
         activeModal("LGPD 2 não marcada, marque e tente novamente!") 
         return
     }
-    
-    let tmp_token = grecaptcha.getResponse(captchaElement) 
-    // https://www.google.com/recaptcha/api/siteverify
-    
-    const data = { 
-        response: tmp_token
-    };
 
-    let data_res = await fetch("action/verify_token_captcha.php",{
-        method:"POST",
-        body: new URLSearchParams(data)
-    })
+    const formData = new FormData(form);
+    //console.log(formData.get('cargo')); testando se pegou algo do input
 
-    let res = await data_res.json()  
-    if(res.success){
-        
-        // CADASTRAR AQUI COM O BACK END - L
+    let data_php = await fetch("action/register_participant.php",{
+             method:"POST",
+             body: formData
+         });
+    
+    let cad = await data_php.json();
+    console.log(cad);
+    if(cad.status){
+        console.log("CADASTROU!!!!")
         allGreen()
         activeModal("Inscrição Realizada!") 
-
-    }else{
-        allRed()
-        grecaptcha.reset(captchaElement);
-        activeModal("Efetue o reCAPTCHA para prosseguir") 
-
     }
+    
+    // let tmp_token = grecaptcha.getResponse(captchaElement) 
+    // // https://www.google.com/recaptcha/api/siteverify
+    
+    // const data = { 
+    //     response: tmp_token
+    // };
 
+    // let data_res = await fetch("action/verify_token_captcha.php",{
+    //     method:"POST",
+    //     body: new URLSearchParams(data)
+    // })
 
+    // let res = await data_res.json()  
+    // if(res.success){
+        
+    //     // FEEDBACK END 
+    //     let data_php = await fetch("action/cadastrar_participante.php",{
+    //         method:"POST",
+    //         body: new URLSearchParams(data)
+    //     })
 
-   
+    //     let cad = await data_php.json()  
+    //     console.log(cad)
+    //     if(cad.success){
+    //         console.log("CADASTROU!!!!")
+    //             allGreen()
+    //             activeModal("Inscrição Realizada!") 
+    //     }
+
+    // }else{
+    //     allRed()
+    //     grecaptcha.reset(captchaElement);
+    //     activeModal("Efetue o reCAPTCHA para prosseguir") 
+
+    // }
     
 })
 
