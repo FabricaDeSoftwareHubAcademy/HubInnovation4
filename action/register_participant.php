@@ -107,7 +107,7 @@ if(isset($_POST['cpf']))
 
             else{
                 $cadastro = array(
-                    'status' => 'ALGUM ERRROOO'
+                    'status' => 'error'
                 );
                 echo json_encode($cadastro);
             }
