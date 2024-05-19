@@ -191,6 +191,7 @@
   transition-delay: .2s;
   transition: .2s;
   opacity: 0;
+  cursor: pointer;
 }
 
 .ver_palestra::before{
@@ -202,10 +203,12 @@
   width: 0%;
   transition: .5s;
   background-color: #322146;
+  
 }
 .span_btn_inscricao{
   position: relative;
   z-index: 2;
+  pointer-events: none;
 }
 .ver_palestra:hover::before{
   width: 100%;
@@ -227,6 +230,10 @@
   align-items: center;
   justify-content: center;
   color: white;
+  cursor: pointer;
+}
+.seta i{
+  pointer-events: none;
 }
 .seta_left{ 
   left: -17px; 
@@ -248,47 +255,7 @@
   font-size: 22px;
   background-color: var(--color-neutral-1);
 }
-/* .bubble{
-  height: 300px;
-  
-  width: 300px;
-  background-color: rebeccapurple;
-  position: absolute;
-  left: 40%;
-  border-radius: 100%;
-  transition: 5s linear; 
-  top: 0; 
-  animation: movingBubble 2s infinite alternate-reverse  ;
-}
-
-@keyframes movingBubble {
-  0% {
-    transform: translate(10%, 30%) scale(2);
-  }
-  20% {
-    transform: translate(0%, 30%) scale(1.2);
-  }
-  40% {
-    transform: translate(-50%, 70%) scale(1.4);
-  }
-  60% {
-    transform: translate(70%, -80%) scale(1);
-  }
-  80% {
-    transform: translate(90%, 70%) scale(1);
-  }
-  100% {
-    transform: translate(-20%, 10%) scale(1.4);
-  }
-} */
-
-
-
-
-
-/* .area_palestras_cards{
-  backdrop-filter: blur(200px); 
-} */
+ 
 
 #palestras{
   display: flex;

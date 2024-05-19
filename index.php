@@ -1,3 +1,93 @@
+<?php
+
+include __DIR__ . '/vendor/autoload.php';
+
+use App\Entity\Palestra;
+
+$new_obj = new Palestra();
+$palestras = $new_obj->filtrar();
+
+$results = '';
+foreach ($palestras as $palestra) {
+  $contVagas = $palestra->vagas;
+  if ($contVagas <= 0) {
+    $results .= '		
+            <div class="card-container move" animation="top" href="inscricao.html"> 
+            <div class="seta seta_left marcavel" onclick="moveCard(this,' . "'left'" . ')">
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div class="seta seta_right marcavel" onclick="moveCard(this,' . "'right'" . ')">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div> 
+            <div class="card">
+              <div class="imgs_palestrante" data-carousel=0>
+                <img class="palestrante" src="' . $palestra->foto . '" alt="">
+                <img class="palestrante"
+                  src="https://media.licdn.com/dms/image/C4D12AQE5OPBvIYUuRw/article-cover_image-shrink_720_1280/0/1593273772702?e=2147483647&v=beta&t=3rWo8Zt_UMWdu65-F3x7G0lXapM1bd6pvs1DSZJAB5g" alt="">
+                <img class="palestrante"
+                  src="https://miro.medium.com/v2/resize:fit:700/1*nN4903HEGDRx33s0e1oSUA.jpeg"
+                  alt="">
+                <img class="palestrante"
+                  src="https://uploads.spiritfanfiction.com/historias/capas/202008/o-assassinato-de-cavalao-20237301-170820202319.jpg"
+                  alt="">
+                <img class="palestrante"
+                  src="https://www.creativefabrica.com/wp-content/uploads/2021/03/08/Go-Horse-Graphics-9343870-1.png"
+                  alt="">
+              </div> 
+              <div class="front-content">
+                <p class="nome-palestrante">' . $palestra->nome_palestrante . '</p>
+              </div>
+              <div class="content">
+                <h1> ENCERRADAS </h1>
+                <p class="titulo-palestra"> ' . $palestra->palestra . '</p>
+                <p class="titulo-palestra2"></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+          ';
+  } else {
+    $results .= '
+          <div class="card-container move" animation="top" href="inscricao.html"> 
+            <div class="seta seta_left marcavel" onclick="moveCard(this,' . "'left'" . ')">
+              <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <div class="seta seta_right marcavel" onclick="moveCard(this,' . "'right'" . ')">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div> 
+            <div class="card">
+              <div class="imgs_palestrante" data-carousel=0>
+                <img class="palestrante" src="' . $palestra->foto . '" alt="">
+                <img class="palestrante"
+                  src="https://media.licdn.com/dms/image/C4D12AQE5OPBvIYUuRw/article-cover_image-shrink_720_1280/0/1593273772702?e=2147483647&v=beta&t=3rWo8Zt_UMWdu65-F3x7G0lXapM1bd6pvs1DSZJAB5g" alt="">
+                <img class="palestrante"
+                  src="https://miro.medium.com/v2/resize:fit:700/1*nN4903HEGDRx33s0e1oSUA.jpeg"
+                  alt="">
+                <img class="palestrante"
+                  src="https://uploads.spiritfanfiction.com/historias/capas/202008/o-assassinato-de-cavalao-20237301-170820202319.jpg"
+                  alt="">
+                <img class="palestrante"
+                  src="https://www.creativefabrica.com/wp-content/uploads/2021/03/08/Go-Horse-Graphics-9343870-1.png"
+                  alt="">
+              </div> 
+              <div class="front-content">
+                <p class="nome-palestrante">' . $palestra->nome_palestrante . '</p>
+              </div>
+              <div class="content">
+                <h1> ' . $palestra->vagas . ' VAGAS</h1>
+                <p class="titulo-palestra"> ' . $palestra->palestra . '</p>
+                <p class="titulo-palestra2"></p>
+                <a href="./inscricao.php?id_palestra=' . $palestra->id_palestra . '" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i class="fa-solid fa-arrow-right "></i></span> </a>
+              </div>
+            </div>
+          </div>
+ 
+    ';
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -46,10 +136,6 @@
           <a href="#palestras">PALESTRAS</a>
         </li>
       </ul>
-
-      <a class="link_login" href="login.html"><button class="btn-default">
-          LOGIN
-        </button></a>
 
       <button id="mobile_btn" class="clicavel">
         <i class="fa-solid fa-bars"></i>
@@ -216,157 +302,20 @@
 
         <div class="cards-palestrantes">
 
-          <div class="card-container move" animation="top" href="inscricao.html"> 
+          <div class="card-container move" animation="top" href="inscricao.html">
             <div class="seta seta_left marcavel" onclick="moveCard(this,'left')">
               <i class="fa-solid fa-arrow-left"></i>
             </div>
             <div class="seta seta_right marcavel" onclick="moveCard(this,'right')">
               <i class="fa-solid fa-arrow-right"></i>
-            </div> 
-            <div class="card">
-              <div class="imgs_palestrante" data-carousel=0>
-                <img class="palestrante"
-                  src="src/images/1692285816932.jpg" alt="">
-                <img class="palestrante"
-                  src="https://media.licdn.com/dms/image/D4D12AQH2OQ9yr_7PfQ/article-cover_image-shrink_600_2000/0/1699050484552?e=2147483647&v=beta&t=I8FvJP5IeQ_EtfUUv7SK8sUkj3AiZc_yM_1Ji52sM2I"
-                  alt="">
-                <img class="palestrante"
-                  src="https://store-images.s-microsoft.com/image/apps.33713.14403266395963549.251bd55f-0d82-470c-8252-49c4239f9962.cb8a0a60-bf47-446d-bfd7-655d02ae0784?h=576"
-                  alt="">
-                <img class="palestrante"
-                  src="https://dm0fehhuxv6f6.cloudfront.net/wp-content/uploads/2023/04/30035515/bing-panda-600x600.jpg"
-                  alt="">
-               </div> 
-              <div class="front-content">
-                <p class="nome-palestrante">Enilda Cáceres</p>
-              </div>
-              <div class="content">
-                <h1>999 VAGAS</h1>
-                <p class="titulo-palestra">Crafting Interfaces Figma: Transformando ideias em Inovação.</p>
-                <p class="titulo-palestra2"></p>
-                <a href="inscricao.html" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i class="fa-solid fa-arrow-right "></i></span> </a>
-              </div>
             </div>
-          </div>
-
-          <div class="card-container move" animation="top" href="inscricao.html"> 
-            <div class="seta seta_left marcavel" onclick="moveCard(this,'left')">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            <div class="seta seta_right marcavel" onclick="moveCard(this,'right')">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div> 
-            <div class="card">
-              <div class="imgs_palestrante" data-carousel=0>
-                <img class="palestrante" src="src/images/calebe.jpg" alt="">
-                <img class="palestrante"
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2020/09/cachorro-pastoreio-pet.jpg" alt="">
-                <img class="palestrante"
-                  src="https://media.licdn.com/dms/image/D4D12AQH2OQ9yr_7PfQ/article-cover_image-shrink_600_2000/0/1699050484552?e=2147483647&v=beta&t=I8FvJP5IeQ_EtfUUv7SK8sUkj3AiZc_yM_1Ji52sM2I"
-                  alt="">
-                <img class="palestrante"
-                  src="https://store-images.s-microsoft.com/image/apps.33713.14403266395963549.251bd55f-0d82-470c-8252-49c4239f9962.cb8a0a60-bf47-446d-bfd7-655d02ae0784?h=576"
-                  alt="">
-                <img class="palestrante"
-                  src="https://dm0fehhuxv6f6.cloudfront.net/wp-content/uploads/2023/04/30035515/bing-panda-600x600.jpg"
-                  alt="">
-              </div> 
-              <div class="front-content">
-                <p class="nome-palestrante">Calebe Pereira</p>
-              </div>
-              <div class="content">
-                <h1>999 VAGAS</h1>
-                <p class="titulo-palestra">Crafting Interfaces Figma: Transformando ideias em Inovação.</p>
-                <p class="titulo-palestra2"></p>
-                <a href="inscricao.html" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i class="fa-solid fa-arrow-right "></i></span> </a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="card-container move" animation="top" href="inscricao.html"> 
-            <div class="seta seta_left marcavel" onclick="moveCard(this,'left')">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            <div class="seta seta_right marcavel" onclick="moveCard(this,'right')">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div> 
-            <div class="card">
-              <div class="imgs_palestrante" data-carousel=0>
-                <img class="palestrante" src="src/images/Ederson.jpg" alt="">
-                <img class="palestrante"
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2020/09/cachorro-pastoreio-pet.jpg" alt="">
-                <img class="palestrante"
-                  src="https://media.licdn.com/dms/image/D4D12AQH2OQ9yr_7PfQ/article-cover_image-shrink_600_2000/0/1699050484552?e=2147483647&v=beta&t=I8FvJP5IeQ_EtfUUv7SK8sUkj3AiZc_yM_1Ji52sM2I"
-                  alt="">
-                <img class="palestrante"
-                  src="https://store-images.s-microsoft.com/image/apps.33713.14403266395963549.251bd55f-0d82-470c-8252-49c4239f9962.cb8a0a60-bf47-446d-bfd7-655d02ae0784?h=576"
-                  alt="">
-                <img class="palestrante"
-                  src="https://dm0fehhuxv6f6.cloudfront.net/wp-content/uploads/2023/04/30035515/bing-panda-600x600.jpg"
-                  alt="">
-              </div> 
-              <div class="front-content">
-                <p class="nome-palestrante">Ederson Costa</p>
-              </div>
-              <div class="content">
-                <h1>999 VAGAS</h1>
-                <p class="titulo-palestra">Crafting Interfaces Figma: Transformando ideias em Inovação.</p>
-                <p class="titulo-palestra2"></p>
-                <a href="inscricao.html" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i class="fa-solid fa-arrow-right "></i></span> </a>
-              </div>
-            </div>
-          </div>
- 
-           
-          <div class="card-container move" animation="top" href="inscricao.html"> 
-            <div class="seta seta_left marcavel" onclick="moveCard(this,'left')">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            <div class="seta seta_right marcavel" onclick="moveCard(this,'right')">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div> 
-            <div class="card">
-              <div class="imgs_palestrante" data-carousel=0>
-                <img class="palestrante" src="src/images/mauricio.jpg" alt="">
-                <img class="palestrante"
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2020/09/cachorro-pastoreio-pet.jpg" alt="">
-                <img class="palestrante"
-                  src="https://media.licdn.com/dms/image/D4D12AQH2OQ9yr_7PfQ/article-cover_image-shrink_600_2000/0/1699050484552?e=2147483647&v=beta&t=I8FvJP5IeQ_EtfUUv7SK8sUkj3AiZc_yM_1Ji52sM2I"
-                  alt="">
-                <img class="palestrante"
-                  src="https://store-images.s-microsoft.com/image/apps.33713.14403266395963549.251bd55f-0d82-470c-8252-49c4239f9962.cb8a0a60-bf47-446d-bfd7-655d02ae0784?h=576"
-                  alt="">
-                <img class="palestrante"
-                  src="https://dm0fehhuxv6f6.cloudfront.net/wp-content/uploads/2023/04/30035515/bing-panda-600x600.jpg"
-                  alt="">
-              </div> 
-              <div class="front-content">
-                <p class="nome-palestrante">Maurício Souza</p>
-              </div>
-              <div class="content">
-                <h1>999 VAGAS</h1>
-                <p class="titulo-palestra">Crafting Interfaces Figma: Transformando ideias em Inovação.</p>
-                <p class="titulo-palestra2"></p>
-                <a href="inscricao.html" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i class="fa-solid fa-arrow-right "></i></span> </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-container move" animation="top" href="inscricao.html"> 
-            <div class="seta seta_left marcavel" onclick="moveCard(this,'left')">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            <div class="seta seta_right marcavel" onclick="moveCard(this,'right')">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div> 
             <div class="card">
               <div class="imgs_palestrante" data-carousel=0>
                 <img class="palestrante" src="src/images/Thiago.jpg" alt="">
                 <img class="palestrante"
-                  src="https://media.licdn.com/dms/image/C4D12AQE5OPBvIYUuRw/article-cover_image-shrink_720_1280/0/1593273772702?e=2147483647&v=beta&t=3rWo8Zt_UMWdu65-F3x7G0lXapM1bd6pvs1DSZJAB5g" alt="">
-                <img class="palestrante"
-                  src="https://miro.medium.com/v2/resize:fit:700/1*nN4903HEGDRx33s0e1oSUA.jpeg"
+                  src="https://media.licdn.com/dms/image/C4D12AQE5OPBvIYUuRw/article-cover_image-shrink_720_1280/0/1593273772702?e=2147483647&v=beta&t=3rWo8Zt_UMWdu65-F3x7G0lXapM1bd6pvs1DSZJAB5g"
+                  alt="">
+                <img class="palestrante" src="https://miro.medium.com/v2/resize:fit:700/1*nN4903HEGDRx33s0e1oSUA.jpeg"
                   alt="">
                 <img class="palestrante"
                   src="https://uploads.spiritfanfiction.com/historias/capas/202008/o-assassinato-de-cavalao-20237301-170820202319.jpg"
@@ -374,7 +323,7 @@
                 <img class="palestrante"
                   src="https://www.creativefabrica.com/wp-content/uploads/2021/03/08/Go-Horse-Graphics-9343870-1.png"
                   alt="">
-              </div> 
+              </div>
               <div class="front-content">
                 <p class="nome-palestrante">Thiago Almeida</p>
               </div>
@@ -382,10 +331,13 @@
                 <h1>999 VAGAS</h1>
                 <p class="titulo-palestra">GO HORSE 🐴: A Metodologia do Futuro 🚀🚀🚀</p>
                 <p class="titulo-palestra2"></p>
-                <a href="inscricao.html" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i class="fa-solid fa-arrow-right "></i></span> </a>
+                <a href="inscricao.html" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i
+                      class="fa-solid fa-arrow-right "></i></span> </a>
               </div>
             </div>
           </div>
+          <?= $results ?>
+
 
         </div>
 
