@@ -123,7 +123,7 @@ foreach ($palestras as $palestra) {
 
   <header>
     <nav id="navbar">
-      <a href="index.html"><img src="src/images/logo_hub4.png" alt="Logo" id="nav_logo"></a>
+      <a href="index.php"><img src="src/images/logo_hub4.png" alt="Logo" id="nav_logo"></a>
 
       <ul id="nav_list">
         <li class="nav-item active">
