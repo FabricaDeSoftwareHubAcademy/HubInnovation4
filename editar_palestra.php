@@ -4,7 +4,7 @@ include __DIR__.'/vendor/autoload.php';
 use App\Entity\Palestra;
 use \App\Session\Login;
 //força login do usuário
-Login::requireLogin();
+// Login::requireLogin();
 
 //constante para mudar o título do form
 define('TITLE','Editar Palestra');
