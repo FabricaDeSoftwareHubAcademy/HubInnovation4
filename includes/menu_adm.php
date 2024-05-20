@@ -35,5 +35,5 @@
 </nav>
 
 <div class="p-5 bg-dark text-white rounded">
-  <img src="./IMG/HubInnovation3.png" class="img-fluid" id="logo" alt="">
+  <img src="./src/images/logo_hub4.png" class="img-fluid" id="logo" alt="">
 </div>
