@@ -3,7 +3,7 @@ include './vendor/autoload.php';
 use \App\Entity\Colaborador;
 use \App\Session\Login;
 
-Login::requireLogout();
+// Login::requireLogout();
 
 if(isset($_POST['logar'])){
     

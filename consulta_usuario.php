@@ -6,7 +6,7 @@ include __DIR__.'/vendor/autoload.php';
 use App\Entity\Usuario;
 use \App\Session\Login;
 //força login do usuário
-Login::requireLogin();
+// Login::requireLogin();
 
 $results = '';
 

@@ -10,10 +10,10 @@ use PDOException;
 class Database{
 
     private $conn;
-    private string $local="localhost:3308";
+    private string $local="localhost";
     private string $db="hub3";
     private string $user = "root";
-    private string $password = "1234";
+    private string $password = "";
    private $table;
 
     public function __construct($table = null){
@@ -202,10 +202,17 @@ class Database{
     }
 
     public function filter_by_cpf($cpf,$id){
+        //DEBUGGING parametros
+        // $var = array(
+        //     'cpf' => $cpf,
+        //     'id' => $id
+        // );
+        // echo json_encode($var);
+        // exit;
         //Método para montar a consulta/query
         $query = 'SELECT usuario.nome,usuario.cpf,palestra.id_palestra,palestra.titulo
         FROM usuario INNER JOIN palestra
-        WHERE cpf = ' .$cpf. '  and palestra.id_palestra = '. $id .'';
+        WHERE cpf='.$cpf.' and palestra.id_palestra='.$id.'';
 
         $result = $this->execute($query);
         if($result->rowCount() >= 1){

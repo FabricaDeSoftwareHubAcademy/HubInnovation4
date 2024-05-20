@@ -37,7 +37,7 @@ function mascaraPhone(i){
 
 function validarTelefone(telefone) {
     // Expressão regular para validar o formato do telefone
-    var regex = /^\(\d{2}\)\s\d\s\d{4}-\d{4}$/;
+    var regex = /^\(\d{2}\)\s\d\s\d{5}-\d{4}$/;
     
     // Testa se o telefone corresponde ao formato esperado
     if (regex.test(telefone)) {
@@ -181,8 +181,6 @@ form.addEventListener("submit",async (e) => {
     
     e.preventDefault() 
  
-
-
     let nome_input = document.querySelector("#nome_input")
     let email_input = document.querySelector("#email_input")
     let phone_input = document.querySelector("#phone_input")
@@ -239,36 +237,26 @@ form.addEventListener("submit",async (e) => {
         activeModal("LGPD 2 não marcada, marque e tente novamente!") 
         return
     }
-    
-    let tmp_token = grecaptcha.getResponse(captchaElement) 
-    // https://www.google.com/recaptcha/api/siteverify
-    
-    const data = { 
-        response: tmp_token
-    };
 
-    let data_res = await fetch("action/verify_token_captcha.php",{
-        method:"POST",
-        body: new URLSearchParams(data)
-    })
+    const formData = new FormData(form);
+    //console.log(formData.get('cargo')); testando se pegou algo do input
 
-    let res = await data_res.json()  
-    if(res.success){
-        
-        // CADASTRAR AQUI COM O BACK END - L
+    let data_php = await fetch("action/register_participant.php",{
+             method:"POST",
+             body: formData
+         });
+    
+    let cad = await data_php.json();
+    
+    if(cad.status == 'success'){
+        console.log('Cadastrado com Sucesso!!');
         allGreen()
         activeModal("Inscrição Realizada!") 
-
     }else{
+        console.log('Erro ao Cadastrar!!');
         allRed()
-        grecaptcha.reset(captchaElement);
-        activeModal("Efetue o reCAPTCHA para prosseguir") 
-
+        activeModal("CPF Já Cadastrado em outra Palestra!") 
     }
-
-
-
-   
     
 })
 

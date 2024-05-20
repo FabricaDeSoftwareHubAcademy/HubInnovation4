@@ -7,8 +7,7 @@ use App\Entity\Palestra;
 use App\Entity\Palestrante;
 use \App\Session\Login;
 //força login do usuário
-Login::requireLogin();
-
+// Login::requireLogin();
 
 use Dompdf\Dompdf;
 

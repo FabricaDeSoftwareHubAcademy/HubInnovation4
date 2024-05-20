@@ -1,9 +1,7 @@
 <?php
 
-include __DIR__.'/vendor/autoload.php';
 
-use App\Entity\Usuario;
 
-$obj = new Usuario();
+$cpf = '013.428.501-81';
 
-var_dump($obj);
+echo limpa_cpf_cnpj($cpf);
