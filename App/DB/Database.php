@@ -10,10 +10,10 @@ use PDOException;
 class Database{
 
     private $conn;
-    private string $local="localhost";
+    private string $local="localhost:3308";
     private string $db="hub3";
     private string $user = "root";
-    private string $password = "";
+    private string $password = "1234";
    private $table;
 
     public function __construct($table = null){

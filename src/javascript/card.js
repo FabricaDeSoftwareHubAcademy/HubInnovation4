@@ -95,7 +95,6 @@ var moveCard = (e,side) => {
         } 
     }
  
-  
     
     let index_carousel =  parseInt(imgs_palestrantes.getAttribute("data-carousel"))
    

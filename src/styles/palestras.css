@@ -145,6 +145,7 @@
   opacity: 1;
 }
 .card:hover .content .titulo-palestra2{
+  width: 95%;
   opacity: 1;
 }
 .card:hover .content .ver_palestra{
@@ -215,7 +216,18 @@
   background-color: #9711ff;
   
 }
- 
+.area_icons{
+
+  position: absolute;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  font-size: 30px;
+
+}
 .seta{
   transition: .2s;
   position: absolute;

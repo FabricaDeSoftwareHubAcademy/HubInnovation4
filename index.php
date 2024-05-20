@@ -38,14 +38,16 @@ foreach ($palestras as $palestra) {
                 <p class="nome-palestrante">' . $palestra->nome_palestrante . '</p>
               </div>
               <div class="content">
-                <h1> ENCERRADAS </h1>
+                <h1> ENCERRADAS </h1> 
+                <div class="area_icons">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
+                </div>
                 <p class="titulo-palestra"> ' . $palestra->palestra . '</p>
                 <p class="titulo-palestra2"></p>
               </div>
             </div>
-          </div>
-
-        </div>
+          </div> 
           ';
   } else {
     $results .= '
@@ -76,6 +78,10 @@ foreach ($palestras as $palestra) {
               </div>
               <div class="content">
                 <h1> ' . $palestra->vagas . ' VAGAS</h1>
+                <div class="area_icons">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
+                </div>
                 <p class="titulo-palestra"> ' . $palestra->palestra . '</p>
                 <p class="titulo-palestra2"></p>
                 <a href="./inscricao.php?id_palestra=' . $palestra->id_palestra . '" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i class="fa-solid fa-arrow-right "></i></span> </a>

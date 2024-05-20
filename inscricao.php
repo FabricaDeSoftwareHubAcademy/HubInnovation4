@@ -92,8 +92,15 @@ if(isset($_GET['id_palestra']))
                     <h1><?=$vagas?> Vagas</h1>
                 </div>
 
-                <div class="area_img move"   animation="left">
-                    <img src="<?=$foto?>" >
+                <div class="view_ins_pale">
+                    <div class="area_icons_ins">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
+                    </div>
+                    <div class="area_img move"   animation="left"> 
+                        <img src="<?=$foto?>" >
+                    </div>
+
                 </div>
                 
                 <h1 class="nome_palestra move" animation="right"> <?=$nome_palestrante?> </h1>
