@@ -184,7 +184,7 @@ if(isset($_GET['id_palestra']))
                     <div class="buttons_content">
                         <button class="clicavel" id="cancel_button">Voltar</button>
                          
-                        <button name="cadastrar" class="clicavel"> 
+                        <button name="cadastrar" id="btn_cad" class="clicavel"> 
                             Cadastrar
                         </button>
                     </div>

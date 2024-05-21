@@ -175,12 +175,24 @@ function activeModal(text){
     modal.classList.add("active")
 }
  
+function resetCampos(){
+
+    let nome_input = document.querySelector("#nome_input").value = ""
+    let email_input = document.querySelector("#email_input").value = ""
+    let phone_input = document.querySelector("#phone_input").value = ""
+    let cpf_input = document.querySelector("#cpf_input").value = "" 
+    let date_input = document.querySelector("#date_input").value = ""
+    let lgpd1 = document.querySelector("#lgpd1").checked = false
+    let lgpd2 = document.querySelector("#lgpd2").checked = false
+
+}
 
 var form = document.querySelector("#form_inscricao")
 form.addEventListener("submit",async (e) => {
     
     e.preventDefault() 
- 
+    document.querySelector("#btn_cad").disabled = true; 
+
     let nome_input = document.querySelector("#nome_input")
     let email_input = document.querySelector("#email_input")
     let phone_input = document.querySelector("#phone_input")
@@ -193,11 +205,13 @@ form.addEventListener("submit",async (e) => {
     if(nome_input.value.length < 3){
         allRed()
         activeModal("Nome inválido, insira pelo menos 3 caracteres") 
+        document.querySelector("#btn_cad").disabled = false;
         return
     }
     if(validarEmail(email_input.value) == false){
         allRed()
         activeModal("Email inválido, reescreva e tente novamente!") 
+        document.querySelector("#btn_cad").disabled = false;
         return
     } 
 
@@ -209,18 +223,21 @@ form.addEventListener("submit",async (e) => {
     if(validarCPF(cpf_input.value) == false){
         allRed()
         activeModal("CPF inválido, reescreva e tente novamente!") 
+        document.querySelector("#btn_cad").disabled = false;
         return
     } 
 
     if(gen_input.value == "Selecione"){
         allRed()
         activeModal("Gênero inválido, selecione uma das opções e tente novamente!") 
+        document.querySelector("#btn_cad").disabled = false;
         return
     }
     if(date_input.value.length == 0){
         // VALIDAR SE A PESSOA TEM NO MINIMO UMA CERTA IDADE
         allRed()
         activeModal("Data de Nascimento inválida, reescreva e tente novamente!") 
+        document.querySelector("#btn_cad").disabled = false;
         return
     }
 
@@ -228,6 +245,7 @@ form.addEventListener("submit",async (e) => {
         // ja faz a validação se esta checked 
         allRed()
         activeModal("LGPD 1 não marcada, marque e tente novamente!") 
+        document.querySelector("#btn_cad").disabled = false;
         return
     }
 
@@ -235,6 +253,7 @@ form.addEventListener("submit",async (e) => {
         // ja faz a validação se esta checked 
         allRed()
         activeModal("LGPD 2 não marcada, marque e tente novamente!") 
+        document.querySelector("#btn_cad").disabled = false;
         return
     }
 
@@ -252,12 +271,15 @@ form.addEventListener("submit",async (e) => {
         console.log('Cadastrado com Sucesso!!');
         allGreen()
         activeModal("Inscrição Realizada!") 
+        resetCampos()
     }else{
         console.log('Erro ao Cadastrar!!');
         allRed()
         activeModal("CPF Já Cadastrado em outra Palestra!") 
     }
     
+    document.querySelector("#btn_cad").disabled = false;
+
 })
 
 document.querySelector("#cancel_button").addEventListener("click",() => {window.location.href = "./index.php"})
