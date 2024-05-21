@@ -201,11 +201,11 @@ form.addEventListener("submit",async (e) => {
         return
     } 
 
-    if(validarTelefone(phone_input.value) == false){
-        allRed()
-        activeModal("Número de telefone inválido, reescreva no formato (xx) x xxxx-xxxx!") 
-        return
-    }
+    // if(validarTelefone(phone_input.value) == false){
+    //     allRed()
+    //     activeModal("Número de telefone inválido, reescreva no formato (xx) x xxxx-xxxx!") 
+    //     return
+    // }
     if(validarCPF(cpf_input.value) == false){
         allRed()
         activeModal("CPF inválido, reescreva e tente novamente!") 
