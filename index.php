@@ -13,12 +13,7 @@ foreach ($palestras as $palestra) {
   if ($contVagas <= 0) {
     $results .= '		
             <div class="card-container move" animation="top" href="inscricao.html"> 
-            <div class="seta seta_left marcavel" onclick="moveCard(this,' . "'left'" . ')">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            <div class="seta seta_right marcavel" onclick="moveCard(this,' . "'right'" . ')">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div> 
+             
             <div class="card">
               <div class="imgs_palestrante" data-carousel=0>
                 <img class="palestrante" src="' . $palestra->foto . '" alt="">
@@ -52,12 +47,7 @@ foreach ($palestras as $palestra) {
   } else {
     $results .= '
           <div class="card-container move" animation="top" href="inscricao.html"> 
-            <div class="seta seta_left marcavel" onclick="moveCard(this,' . "'left'" . ')">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            <div class="seta seta_right marcavel" onclick="moveCard(this,' . "'right'" . ')">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div> 
+            
             <div class="card">
               <div class="imgs_palestrante" data-carousel=0>
                 <img class="palestrante" src="' . $palestra->foto . '" alt="">
@@ -303,12 +293,7 @@ foreach ($palestras as $palestra) {
         <div class="cards-palestrantes">
 
           <div class="card-container move" animation="top" href="inscricao.html">
-            <div class="seta seta_left marcavel" onclick="moveCard(this,'left')">
-              <i class="fa-solid fa-arrow-left"></i>
-            </div>
-            <div class="seta seta_right marcavel" onclick="moveCard(this,'right')">
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
+             
             <div class="card">
               <div class="imgs_palestrante" data-carousel=0>
                 <img class="palestrante" src="src/images/Thiago.jpg" alt="">

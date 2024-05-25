@@ -1,46 +1,43 @@
 var card = document.querySelectorAll(".card-container")
 var timeoutWrite 
 
-    card.forEach(e => {
- 
-            e.addEventListener("mouseenter", () => {
-        
-                clearTimeout(timeoutWrite)
-                var title = e.querySelector(".titulo-palestra")
-                var title2 = e.querySelector(".titulo-palestra2")
-        
-                var textTitle = title.innerHTML
-                title.style.display = "none"
-        
-                var i = 0
-                var wrote_text = ""
-                function writeText(textTitle){
-        
-                    wrote_text = wrote_text + textTitle[i]
-        
-                    if(wrote_text.length < textTitle.length){
-                        
-                        title2.innerHTML = wrote_text + "|"
-                        timeoutWrite = setTimeout(() => {
-                            writeText(textTitle)
-                        },30)
-                    } else{ 
-                        title2.innerHTML = wrote_text  
-                    }
-                    i++
-                } 
-          
-        
-                writeText(textTitle)
-            })
-            e.addEventListener("mouseleave", () => {
-        
-                 
-            })
-        
+card.forEach(e => {
+    
+    setInterval(() => {
+        moveCard(e,"right")
+    },5000)
+    e.addEventListener("mouseenter", () => {
 
-        }
-    )
+        clearTimeout(timeoutWrite)
+        var title = e.querySelector(".titulo-palestra")
+        var title2 = e.querySelector(".titulo-palestra2")
+
+        var textTitle = title.innerHTML
+        title.style.display = "none"
+
+        var i = 0
+        var wrote_text = ""
+        function writeText(textTitle){
+
+            wrote_text = wrote_text + textTitle[i]
+
+            if(wrote_text.length < textTitle.length){
+                
+                title2.innerHTML = wrote_text + "|"
+                timeoutWrite = setTimeout(() => {
+                    writeText(textTitle)
+                },30)
+            } else{ 
+                title2.innerHTML = wrote_text  
+            }
+            i++
+        } 
+    
+
+        writeText(textTitle)
+    })
+     
+})
     
 const COLORS = [
 "#fff9ea",
