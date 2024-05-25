@@ -392,7 +392,7 @@ input[type="checkbox"] {
     width: 90%;
     max-width: 700px;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.589);
+    background-color: rgb(242 242 242 / 59%);
     backdrop-filter: blur(20px);
     position: fixed;
     left: 50%;
@@ -424,7 +424,7 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
  
 
@@ -434,7 +434,9 @@ input[type="checkbox"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    text-align: center;
 }
 
 .btn_x_modal{
