@@ -163,17 +163,7 @@ function allGreen(){
     
 }
 
-function closeModal(){
 
-    modal = document.querySelector(".modal_inscricao")
-    modal.classList.remove("active")
-}
- 
-function activeModal(text){
-    let modal = document.querySelector(".modal_inscricao")
-    document.querySelector("#text_modal").innerHTML = text
-    modal.classList.add("active")
-}
  
 function resetCampos(){
 
@@ -204,39 +194,35 @@ form.addEventListener("submit",async (e) => {
     
     if(nome_input.value.length < 3){
         allRed()
-        activeModal("Nome inválido, insira pelo menos 3 caracteres") 
+        activeModal("Nome inválido, insira pelo menos 3 caracteres",false) 
         document.querySelector("#btn_cad").disabled = false;
         return
     }
     if(validarEmail(email_input.value) == false){
         allRed()
-        activeModal("Email inválido, reescreva e tente novamente!") 
+        activeModal("Email inválido, reescreva e tente novamente!",false) 
         document.querySelector("#btn_cad").disabled = false;
         return
     } 
 
-    // if(validarTelefone(phone_input.value) == false){
-    //     allRed()
-    //     activeModal("Número de telefone inválido, reescreva no formato (xx) x xxxx-xxxx!") 
-    //     return
-    // }
+    
     if(validarCPF(cpf_input.value) == false){
         allRed()
-        activeModal("CPF inválido, reescreva e tente novamente!") 
+        activeModal("CPF inválido, reescreva e tente novamente!",false) 
         document.querySelector("#btn_cad").disabled = false;
         return
     } 
 
     if(gen_input.value == "Selecione"){
         allRed()
-        activeModal("Gênero inválido, selecione uma das opções e tente novamente!") 
+        activeModal("Gênero inválido, selecione uma das opções e tente novamente!",false) 
         document.querySelector("#btn_cad").disabled = false;
         return
     }
     if(date_input.value.length == 0){
         // VALIDAR SE A PESSOA TEM NO MINIMO UMA CERTA IDADE
         allRed()
-        activeModal("Data de Nascimento inválida, reescreva e tente novamente!") 
+        activeModal("Data de Nascimento inválida, reescreva e tente novamente!",false) 
         document.querySelector("#btn_cad").disabled = false;
         return
     }
@@ -244,7 +230,7 @@ form.addEventListener("submit",async (e) => {
     if(lgpd1.checked == false){
         // ja faz a validação se esta checked 
         allRed()
-        activeModal("LGPD 1 não marcada, marque e tente novamente!") 
+        activeModal("LGPD 1 não marcada, marque e tente novamente!",false) 
         document.querySelector("#btn_cad").disabled = false;
         return
     }
@@ -252,13 +238,36 @@ form.addEventListener("submit",async (e) => {
     if(lgpd2.checked == false){
         // ja faz a validação se esta checked 
         allRed()
-        activeModal("LGPD 2 não marcada, marque e tente novamente!") 
+        activeModal("LGPD 2 não marcada, marque e tente novamente!",false) 
         document.querySelector("#btn_cad").disabled = false;
         return
     }
 
-    const formData = new FormData(form);
-    //console.log(formData.get('cargo')); testando se pegou algo do input
+  
+    let tmp_token = grecaptcha.getResponse(captchaElement) 
+    // https://www.google.com/recaptcha/api/siteverify
+
+    const data = { 
+        response: tmp_token
+    };
+
+    let data_res = await fetch("action/verify_token_captcha.php",{
+        method:"POST",
+        body: new URLSearchParams(data)
+    })
+
+    let res = await data_res.json()  
+    if(res.success == false){
+        // ERRO, CAPTCHA INVALIDO
+        document.querySelector("#btn_cad").disabled = false;
+        allRed()
+        grecaptcha.reset(captchaElement);
+        activeModal("Efetue o reCAPTCHA para prosseguir") 
+        return
+    }
+  
+
+    const formData = new FormData(form); 
 
     let data_php = await fetch("action/register_participant.php",{
              method:"POST",
@@ -267,15 +276,14 @@ form.addEventListener("submit",async (e) => {
     
     let cad = await data_php.json();
     
-    if(cad.status == 'success'){
-        console.log('Cadastrado com Sucesso!!');
+    if(cad.status == 'success'){ 
         allGreen()
-        activeModal("Inscrição Realizada!") 
+        activeModal("Inscrição Realizada!",true) 
         resetCampos()
     }else{
         console.log('Erro ao Cadastrar!!');
         allRed()
-        activeModal("CPF Já Cadastrado em outra Palestra!") 
+        activeModal("CPF Já Cadastrado em outra Palestra!",false) 
     }
     
     document.querySelector("#btn_cad").disabled = false;

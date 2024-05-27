@@ -46,7 +46,7 @@ if(isset($_GET['id_palestra']))
     <script defer src="src/javascript/cursor.js"></script>
 
      
-    <!-- <script>
+    <script>
 
         var captchaElement
         var onloadCaptcha = () => { 
@@ -56,20 +56,62 @@ if(isset($_GET['id_palestra']))
             });
         }
 
+        function closeModal(){ 
+            modal = document.querySelector(".modal_inscricao")
+            modal.classList.remove("active")
+             
+        }
+
+        function activeModal(text,bool){
+
+            var icon_modal = document.getElementById("icon_modal_principal")
+            var btn_close_modal = document.querySelector(".btn_close_modal")
+            var bubbles = document.querySelectorAll(".bubble")
+             
+
+            if(bool){ 
+                icon_modal.className = "fa-regular fa-circle-check"
+                icon_modal.style.color = "green"
+                btn_close_modal.style.backgroundColor = "green"
+                bubbles.forEach(e => {
+                    e.style.backgroundColor = "green"
+                })
+                
+            }else{ 
+                icon_modal.className = "fa-regular fa-circle-xmark"
+                icon_modal.style.color = "red"
+                btn_close_modal.style.backgroundColor = "red"
+                bubbles.forEach(e => {
+                    e.style.backgroundColor = "red"
+                })
+            }
+            let modal = document.querySelector(".modal_inscricao")
+            document.querySelector("#text_modal").innerHTML = text
+            modal.classList.add("active")
+        }
     </script>
-     -->
-    <!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCaptcha&render=explicit" async defer></script> -->
+    
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCaptcha&render=explicit" async defer></script>
  
 
 </head>
 <body class="body_inscricao"> 
     <div class="modal_inscricao">
-        <div class="lineModal"></div>
-        <div class="areaX"> 
-            <i class="fa-solid fa-xmark btn_x_modal" onclick="closeModal()"></i> 
+
+        <div class="back_side">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
         </div>
-        <div class="area-text-modal">
-            <p id="text_modal"></p>
+        <div class="front_side">
+            
+            <div class="areaX"> 
+                <i class="fa-solid fa-xmark btn_x_modal" onclick="closeModal()"></i> 
+            </div>
+            <div class="area-text-modal">
+                <i id="icon_modal_principal" class="fa-regular fa-circle-check"></i>
+                <p id="text_modal">Cadastrado com Sucesso!</p>
+                <button class="btn_close_modal"  onclick="closeModal()">OK</button>
+            </div>
         </div>
 
     </div>
@@ -175,7 +217,7 @@ if(isset($_GET['id_palestra']))
                             <input type="checkbox" name="info" id="lgpd2">
                             <Label>Você concorda em receber informações a respeito de cursos relacionados ao Senac.</Label>
                         </div>
-                        <!-- <div id="localCaptcha"></div> -->
+                        <div id="localCaptcha"></div>
                        
 
                     </div>
