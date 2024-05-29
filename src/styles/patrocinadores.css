@@ -15,6 +15,7 @@
     width: 100%;
     flex-wrap: wrap;
     gap: 70px;
+    padding: 0 20px;
 }
 .area_imgs_patrocinadores img{
      max-width: 200px;
