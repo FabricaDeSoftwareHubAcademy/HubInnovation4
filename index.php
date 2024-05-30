@@ -332,12 +332,16 @@ foreach ($palestras as $palestra) {
     <section id="patrocinadores">
       <h3 class="section-subtitle move" animation="right">APOIADORES</h3>
       <div class="area_imgs_patrocinadores">
-        <img src="src/images/logo_senac.png" alt="logo apoiador" srcset="">
-        <img src="src/images/logo_hub4.png" alt="logo apoiador" srcset="">
-        <img src="src/images/logo_senac.png" alt="logo apoiador" srcset="">
-        <img src="src/images/logo_hub4.png" alt="logo apoiador" srcset="">
-        <img src="src/images/logo_hub4.png" alt="logo apoiador" srcset="">
-        <img src="src/images/logo_senac.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/BNI.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/GASTROLOGICA.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/JL GOLD.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/logo-eco-cg-branca-png.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/LONGEVA.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/PIRES.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/RAIZEN.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/senacFec_white.png" alt="logo apoiador" srcset="">
+        <img src="src/images/logos/WIZARD.png" alt="logo apoiador" srcset="">
+         
 
       </div>
 
