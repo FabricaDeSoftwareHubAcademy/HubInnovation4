@@ -35,8 +35,8 @@ foreach ($palestras as $palestra) {
               <div class="content">
                 <h1> ENCERRADAS </h1> 
                 <div class="area_icons">
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
+                  <a href="'.$palestra->instagram.'" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
+                  <a href="'.$palestra->linkedin.'" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
                 </div>
                 <p class="titulo-palestra"> ' . $palestra->palestra . '</p>
                 <p class="titulo-palestra2"></p>
@@ -69,8 +69,8 @@ foreach ($palestras as $palestra) {
               <div class="content">
                 <h1> ' . $palestra->vagas . ' VAGAS</h1>
                 <div class="area_icons">
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
+                  <a href="'.$palestra->instagram.'" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
+                  <a href="'.$palestra->linkedin.'" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
                 </div>
                 <p class="titulo-palestra"> ' . $palestra->palestra . '</p>
                 <p class="titulo-palestra2"></p>
