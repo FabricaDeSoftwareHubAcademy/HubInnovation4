@@ -14,8 +14,7 @@ $colaboradores = $obj->buscar();
 
 //echo "<pre>"; print_r($colaboradores); echo "</pre>";
 
-if(isset($_POST['formacao']) && $_POST['nome']
-  && $_POST['fone'] && $_POST['email']){
+if(isset($_POST['nome']) && $_POST['instagram']){
   $convidado = new Palestrante;
 
   $arquivo = $_FILES['foto'];
@@ -31,10 +30,9 @@ if(isset($_POST['formacao']) && $_POST['nome']
 
   $convidado->foto = $path;
   $convidado->nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
-  $convidado->telefone = filter_input(INPUT_POST, 'fone', FILTER_SANITIZE_SPECIAL_CHARS);
-  $convidado->email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-  $convidado->instagram = filter_input(INPUT_POST, 'formacao', FILTER_SANITIZE_SPECIAL_CHARS);
-  $convidado->linkedin = filter_input(INPUT_POST, 'empresa', FILTER_SANITIZE_SPECIAL_CHARS);
+  $convidado->bio = filter_input(INPUT_POST, 'bio', FILTER_SANITIZE_SPECIAL_CHARS);
+  $convidado->instagram = filter_input(INPUT_POST, 'instagram', FILTER_SANITIZE_SPECIAL_CHARS);
+  $convidado->linkedin = filter_input(INPUT_POST, 'linkedin', FILTER_SANITIZE_SPECIAL_CHARS);
   $convidado->responsavel = filter_input(INPUT_POST, 'resp', FILTER_SANITIZE_SPECIAL_CHARS);
 
   //echo "<pre>"; print_r($convidado); echo "</pre>";

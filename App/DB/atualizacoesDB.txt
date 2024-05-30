@@ -1,0 +1,2 @@
+ALTER TABLE palestrante DROP COLUMN email;
+ALTER TABLE palestrante CHANGE telefone bio text;

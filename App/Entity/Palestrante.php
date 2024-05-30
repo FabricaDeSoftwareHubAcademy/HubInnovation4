@@ -10,8 +10,7 @@ class Palestrante{
     public int $id_palestrante;
     public string $foto;
     public string $nome;
-    public string $telefone;
-    public string $email;
+    public string $bio;
     public string $instagram;
     public string $linkedin;
     public string $responsavel;
@@ -27,8 +26,7 @@ class Palestrante{
                                     [
                                         'foto' => $this->foto,
                                         'nome' => $this->nome,
-                                        'telefone' => $this->telefone,
-                                        'email' => $this->email,
+                                        'bio' => $this->bio,
                                         'instagram' => $this->instagram,
                                         'linkedin' => $this->linkedin,
                                         'responsavel' => $this->responsavel

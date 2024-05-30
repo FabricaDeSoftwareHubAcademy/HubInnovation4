@@ -24,49 +24,37 @@
         </div>
 
         <div class="row">
-          <div class="col-md-4 mb-3">
-            <label for="fone" class="form-label"> Telefone </label>
-            <input
-              type="number"
-              class="form-control"
-              id="fone"
-              name="fone"
-              placeholder="Digite seu Telefone"
-              required
-            />
-          </div>
-          <div class="col-md-8 mb-3">
-            <label for="email" class="form-label">E-mail</label>
-            <input
-              type="text"
-              class="form-control"
-              id="email"
-              name="email"
-              placeholder="E-mail do palestrante"
-              required
-            />
-          </div>
-        </div>
+    <div class="col-md-12 mb-3">
+      <label for="bio" class="form-label">Bio</label>
+      <textarea
+        class="form-control"
+        name="bio"
+        id="bio"
+        placeholder="Bio do(a) Palestrante"
+        rows="3">
+    </textarea>
+    </div>
+  </div>
 
         <div class="row">
           <div class="col-md-4 mb-3">
-            <label for="formacao" class="form-label"> Instagram </label>
+            <label for="instagram" class="form-label"> Instagram </label>
             <input
               type="text"
               class="form-control"
-              id="formacao"
-              name="formacao"
+              id="instagram"
+              name="instagram"
               placeholder="Link do Instagram do Palestrante"
               required
             />
           </div>
           <div class="col-md-4 mb-3">
-            <label for="empresa" class="form-label"> LinkedIn </label>
+            <label for="linkedin" class="form-label"> LinkedIn </label>
             <input
               type="text"
               class="form-control"
-              id="empresa"
-              name="empresa"
+              id="linkedin"
+              name="linkedin"
               placeholder="Link do LinkedIn do Palestrante"
             />
           </div>

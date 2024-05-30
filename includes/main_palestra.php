@@ -52,7 +52,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
       <label for="sala" class="form-label"> Ambiente </label>
       <select class="form-select" name="sala" id="sala">
               <!-- INSERIR FOR DO COLAB -->
@@ -66,7 +66,7 @@
                     ?>  
         </select>
     </div>
-    <div class="col-md-4 mb-3">
+    <div class="col-md-6 mb-3">
       <label for="vagas" class="form-label"> Vagas </label>
       <input
         type="number"
@@ -76,10 +76,6 @@
         placeholder="Qtde. Vagas"
         required
       />
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="data" class="form-label"> Data </label>
-      <input type="date" class="form-control" name="data" id="data">
     </div>
   </div>
 

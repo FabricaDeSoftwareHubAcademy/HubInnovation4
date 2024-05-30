@@ -13,7 +13,6 @@ class Palestra{
     public string $descricao;
     public string $sala;
     public string $vagas;
-    public string $data;
     public string $insumos;
     public string $palestrante;
     //Função cadastrar
@@ -21,8 +20,6 @@ class Palestra{
     public function cadastrar(){
         //Instanciar banco
         $db = new Database('palestra');
-        //definir a data
-        $this->data = date('Y-m-d H:i:s');
         //inserir palestra no banco
         //passando um array chave valor por parametro
         //retornando o id cadastrado
@@ -32,7 +29,6 @@ class Palestra{
                                         'descricao' => $this->descricao,
                                         'sala' => $this->sala,
                                         'vagas' => $this->vagas,
-                                        'data_palestra' => $this->data,
                                         'insumos' => $this->insumos,
                                         'id_palestrante' => $this->palestrante,
                                     ]
@@ -48,7 +44,6 @@ class Palestra{
             'descricao' => $this->descricao,
             'sala' => $this->sala,
             'vagas' => $this->vagas,
-            'data_palestra' => $this->data,
             'insumos' => $this->insumos,
             'id_palestrante' => $this->palestrante
         ]);

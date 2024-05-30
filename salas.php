@@ -5,7 +5,7 @@ include __DIR__.'/vendor/autoload.php';
 use App\Entity\Ambiente;
 use \App\Session\Login;
 //força login do usuário
-// Login::requireLogin();
+Login::requireLogin();
 
 
 if(isset($_POST['numero']) && $_POST['nome']
