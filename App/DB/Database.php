@@ -10,10 +10,10 @@ use PDOException;
 class Database{
 
     private $conn;
-    private string $local="localhost:3308";
+    private string $local="localhost";
     private string $db="hub3";
     private string $user = "root";
-    private string $password = "1234";
+    private string $password = "";
    private $table;
 
     public function __construct($table = null){
@@ -172,7 +172,7 @@ class Database{
         //Método para montar a consulta/query
         $query = 'SELECT palestrante.id_palestrante,palestrante.nome as nome_palestrante,
         palestrante.foto,palestra.id_palestra,palestra.titulo as palestra,
-        palestra.descricao as descricao, palestra.vagas as vagas, palestra.sala as sala
+        palestra.descricao as descricao, palestrante.bio as bio, palestra.vagas as vagas, palestra.sala as sala
         FROM `palestrante` INNER JOIN `palestra`
         ON palestra.id_palestrante = palestrante.id_palestrante AND
         palestra.id_palestra = '. $id .'';

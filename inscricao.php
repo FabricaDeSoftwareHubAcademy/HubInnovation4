@@ -16,6 +16,7 @@ if(isset($_GET['id_palestra']))
     $nome_palestrante = $palestra->nome_palestrante; 
     $vagas = $palestra->vagas;
     $sala = $palestra->sala; 
+    $bio = $palestra->bio;
     //echo "<pre>"; print_r($new_obj); echo "</pre>";
 }else{
     header('location:./index.php');
@@ -153,7 +154,7 @@ if(isset($_GET['id_palestra']))
                         <h2 class="move" animation="top">BIO</h2>
                         <div class="tracer"></div>
                     </div>
-                    <p  animation="left" class="desc_about move"> <?=$descricao?></p>
+                    <p  animation="left" class="desc_about move"> <?=$bio?></p>
                     <div class="title_about">
                         <div class="tracer"></div>
                         <h2 class="move" animation="top">SOBRE</h2>
