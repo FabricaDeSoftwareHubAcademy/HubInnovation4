@@ -9,7 +9,7 @@
 
 /* Estilo do botão de rolagem */
 ::-webkit-scrollbar-thumb {
-    background-color: #0f0f0f65; /* Cor do botão de rolagem */
+    background-color: var(--color-primary-4); /* Cor do botão de rolagem */
     border-radius: 6px; /* Raio da borda do botão de rolagem */
 }
 
@@ -18,7 +18,7 @@
     width: 100vw;
     
     height: 100%; 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
@@ -82,7 +82,8 @@
  
 }
 .area_inscricao{
-    height: 100vh;
+    margin-top: 5%; 
+    margin-bottom: 5%; 
     width: 100vw;
      position: relative;
     z-index: 2;
@@ -108,12 +109,14 @@
 }
 
 .left_side{
-    height: 680px;
+      
+    max-height: 800px;
+    overflow-y: scroll;
+    overflow-x: hidden;
     width: 40%;
     min-width: 300px;
     background-color: rgba(0, 0, 0, 0.616);
-    overflow: hidden;
-    position: relative;
+    
 }
 .vagas_title{
     padding: 10px;
@@ -155,8 +158,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .about_area{
-    margin-top: 10px;
-    height: 100%;
+    margin-top: 10px; 
     
 }
 .title_about h2{
@@ -186,7 +188,7 @@
 }
 .right_side{
     width: 60%;
-    height: 600px; 
+    height: 800px; 
      
     min-width: 650px;
     padding: 20px 50px;
@@ -203,11 +205,7 @@
 }
 .inputs{  
     padding: 20px 10px;
-    max-height: 450px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: 100%;
-    margin: 20px auto;
+    margin:  20px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -268,6 +266,7 @@
      
 }
 .aling_two_40{
+    gap: 5px;
     transform: translateY(-50px);
     flex-wrap: wrap;
 }
@@ -313,9 +312,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-     
-    margin-top: 50px;
-    padding: 20px;
+      
+    padding: 20px; 
 }
 
 .buttons_content button{
@@ -352,7 +350,7 @@ input[type="checkbox"] {
     
     min-width: 25px;
     min-height: 25px;
-    border: 0.15em solid var(--color-neutral-1);
+    border: 0.15em solid rgb(207, 207, 207);
     border-radius: 0.15em;
     transform: translateY(-0.075em); 
     display: grid;
@@ -513,6 +511,7 @@ input[type="checkbox"] {
 }
 @media (max-width: 1207px) {
     .left_side{
+        overflow-y: auto;
         width: 100%;
         padding: 15px;
         min-width: 0;
@@ -567,6 +566,9 @@ input[type="checkbox"] {
 
     .input_area_genero{
         max-width: none;
+    }
+    .area_checkboxes label{
+        font-size: 12px;
     }
 
 }

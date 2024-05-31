@@ -6,7 +6,7 @@ use App\Entity\Usuario;
 use App\Entity\Palestra;
 
 if(isset($_GET['id_palestra']))
-{
+{   
     $id_palestra = filter_input(INPUT_GET,'id_palestra',FILTER_SANITIZE_NUMBER_INT);
     $new_obj = new Palestra();
     $palestra = $new_obj->get_idPalestra($id_palestra);
@@ -148,6 +148,12 @@ if(isset($_GET['id_palestra']))
                 <h1 class="nome_palestra move" animation="right"> <?=$nome_palestrante?> </h1>
                 
                 <div class="about_area">
+                    <div class="title_about">
+                        <div class="tracer"></div>
+                        <h2 class="move" animation="top">BIO</h2>
+                        <div class="tracer"></div>
+                    </div>
+                    <p  animation="left" class="desc_about move"> <?=$descricao?></p>
                     <div class="title_about">
                         <div class="tracer"></div>
                         <h2 class="move" animation="top">SOBRE</h2>

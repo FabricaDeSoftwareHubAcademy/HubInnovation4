@@ -90,7 +90,7 @@ function allRed(){
     ]
     let i = 0
     balls.forEach(e => { 
-      
+    
         anime({
             targets: e,
             translateX: anime.random(-100,100),
