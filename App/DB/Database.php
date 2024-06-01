@@ -167,12 +167,13 @@ class Database{
             return "Palestra não encontrada!";
         }
     }
-
+    
     public function search_palestra($id){
         //Método para montar a consulta/query
         $query = 'SELECT palestrante.id_palestrante,palestrante.nome as nome_palestrante,
         palestrante.foto,palestra.id_palestra,palestra.titulo as palestra,
-        palestra.descricao as descricao, palestrante.bio as bio, palestra.vagas as vagas, palestra.sala as sala
+        palestra.descricao as descricao, palestrante.bio as bio, palestra.vagas as vagas, palestra.sala as sala,
+        palestrante.instagram, palestrante.linkedin
         FROM `palestrante` INNER JOIN `palestra`
         ON palestra.id_palestrante = palestrante.id_palestrante AND
         palestra.id_palestra = '. $id .'';

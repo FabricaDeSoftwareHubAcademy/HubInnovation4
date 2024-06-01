@@ -17,6 +17,8 @@ if(isset($_GET['id_palestra']))
     $vagas = $palestra->vagas;
     $sala = $palestra->sala; 
     $bio = $palestra->bio;
+    $insta = $palestra->instagram;
+    $linked = $palestra->linkedin;
     //echo "<pre>"; print_r($new_obj); echo "</pre>";
 }else{
     header('location:./index.php');
@@ -137,8 +139,8 @@ if(isset($_GET['id_palestra']))
 
                 <div class="view_ins_pale">
                     <div class="area_icons_ins">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
+                        <a href="<?=$insta?>" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
+                        <a href="<?=$linked?>" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
                     </div>
                     <div class="area_img move"   animation="left"> 
                         <img src="<?=$foto?>" >
