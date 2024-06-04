@@ -17,17 +17,6 @@ foreach ($palestras as $palestra) {
             <div class="card" onclick="seeCardDescription(this)">
               <div class="imgs_palestrante" data-carousel=0>
                 <img class="palestrante" src="' . $palestra->foto . '" alt="">
-                <img class="palestrante"
-                  src="https://media.licdn.com/dms/image/C4D12AQE5OPBvIYUuRw/article-cover_image-shrink_720_1280/0/1593273772702?e=2147483647&v=beta&t=3rWo8Zt_UMWdu65-F3x7G0lXapM1bd6pvs1DSZJAB5g" alt="">
-                <img class="palestrante"
-                  src="https://miro.medium.com/v2/resize:fit:700/1*nN4903HEGDRx33s0e1oSUA.jpeg"
-                  alt="">
-                <img class="palestrante"
-                  src="https://uploads.spiritfanfiction.com/historias/capas/202008/o-assassinato-de-cavalao-20237301-170820202319.jpg"
-                  alt="">
-                <img class="palestrante"
-                  src="https://www.creativefabrica.com/wp-content/uploads/2021/03/08/Go-Horse-Graphics-9343870-1.png"
-                  alt="">
               </div> 
               <div class="front-content">
                 <p class="nome-palestrante">' . $palestra->nome_palestrante . '</p>
@@ -51,17 +40,6 @@ foreach ($palestras as $palestra) {
             <div class="card" onclick="seeCardDescription(this)">
               <div class="imgs_palestrante" data-carousel=0>
                 <img class="palestrante" src="' . $palestra->foto . '" alt="">
-                <img class="palestrante"
-                  src="https://media.licdn.com/dms/image/C4D12AQE5OPBvIYUuRw/article-cover_image-shrink_720_1280/0/1593273772702?e=2147483647&v=beta&t=3rWo8Zt_UMWdu65-F3x7G0lXapM1bd6pvs1DSZJAB5g" alt="">
-                <img class="palestrante"
-                  src="https://miro.medium.com/v2/resize:fit:700/1*nN4903HEGDRx33s0e1oSUA.jpeg"
-                  alt="">
-                <img class="palestrante"
-                  src="https://uploads.spiritfanfiction.com/historias/capas/202008/o-assassinato-de-cavalao-20237301-170820202319.jpg"
-                  alt="">
-                <img class="palestrante"
-                  src="https://www.creativefabrica.com/wp-content/uploads/2021/03/08/Go-Horse-Graphics-9343870-1.png"
-                  alt="">
               </div> 
               <div class="front-content">
                 <p class="nome-palestrante">' . $palestra->nome_palestrante . '</p>
@@ -297,13 +275,8 @@ foreach ($palestras as $palestra) {
           <h3 class="section-subtitle move" animation="right">INSPIRE-SE</h3>
         </div>
 
-
         <div class="cards-palestrantes">
-
-           
           <?= $results ?>
-
-
         </div>
 
       </div>

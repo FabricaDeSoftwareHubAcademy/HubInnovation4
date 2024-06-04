@@ -116,7 +116,7 @@ if(isset($_POST['cpf']))
                     
                                                  //Configurando a mensagem para ser enviada
                                          $enviaMsg = ' Olá <b>' . $nome . '</b> você está inscrito(a) na <b> 4ª Edição do HUB Innovation!!! </b> <br>
-                                         Palestra: <strong>  '.$titulo.' </strong>. <br> No dia 18 de junho às 19h, aguardamos você no Senac Hub Academy. Rua Francisco Xavier, 75. <br> Ficaremos feliz com sua presença no Encontro que multiplica conexões! ';
+                                         Palestra: <strong>  '.$titulo.' </strong>. <br> No dia 19 de junho às 19h, aguardamos você no Senac Hub Academy. Rua Francisco Xavier, 75. <br> Ficaremos feliz com sua presença no Encontro que multiplica conexões! ';
                     
                                          $mail->Body = $enviaMsg;
                                          $mail->send();

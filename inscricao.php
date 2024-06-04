@@ -16,6 +16,9 @@ if(isset($_GET['id_palestra']))
     $nome_palestrante = $palestra->nome_palestrante; 
     $vagas = $palestra->vagas;
     $sala = $palestra->sala; 
+    $bio = $palestra->bio;
+    $insta = $palestra->instagram;
+    $linked = $palestra->linkedin;
     //echo "<pre>"; print_r($new_obj); echo "</pre>";
 }else{
     header('location:./index.php');
@@ -136,8 +139,8 @@ if(isset($_GET['id_palestra']))
 
                 <div class="view_ins_pale">
                     <div class="area_icons_ins">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
+                        <a href="<?=$insta?>" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-instagram"></i></a> 
+                        <a href="<?=$linked?>" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin"></i></a> 
                     </div>
                     <div class="area_img move"   animation="left"> 
                         <img src="<?=$foto?>" >
@@ -153,7 +156,7 @@ if(isset($_GET['id_palestra']))
                         <h2 class="move" animation="top">BIO</h2>
                         <div class="tracer"></div>
                     </div>
-                    <p  animation="left" class="desc_about move"> <?=$descricao?></p>
+                    <p  animation="left" class="desc_about move"> <?=$bio?></p>
                     <div class="title_about">
                         <div class="tracer"></div>
                         <h2 class="move" animation="top">SOBRE</h2>
