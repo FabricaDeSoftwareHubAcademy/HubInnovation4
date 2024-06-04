@@ -113,7 +113,7 @@ function seeCardDescription(e){
     allCards.forEach(card => {
         card.classList.remove("active")
     })
-     
+
     e.classList.add("active")
 
 
@@ -131,7 +131,7 @@ function seeCardDescription(e){
             wrote_text = wrote_text + textTitle[i]
 
             if(wrote_text.length < textTitle.length){
-                
+
                 title2.innerHTML = wrote_text + "|"
                 timeoutWrite = setTimeout(() => {
                     writeText(textTitle)
@@ -141,7 +141,7 @@ function seeCardDescription(e){
             }
             i++
         } 
-    
+
 
         writeText(textTitle)
 

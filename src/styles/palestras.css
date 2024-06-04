@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  cursor: pointer; 
   justify-content: end;
 
 }
@@ -64,7 +64,7 @@
   right: 0;  
   z-index: 2;
   padding: 5px 15px;
-  text-align: center;
+  text-align: center; 
   justify-content: center;
 
   
@@ -137,8 +137,7 @@
   font-weight: 700;
 }
 
-/* AQUI  */
-
+  
 .card.active .content{
   height: 100%;
   padding: 10px;
@@ -163,25 +162,6 @@
 .card.active .content .ver_palestra{
   opacity: 1;
 }
-
-/* .card:hover .content {
-  height: 100%;
-  padding: 10px;
-  width: 100%;
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.274); 
-}
-.card:hover .content h1{
-  opacity: 1;
-}
-.card:hover .content .titulo-palestra2{
-  width: 95%;
-  opacity: 1;
-}
-.card:hover .content .ver_palestra{
-  opacity: 1;
-}
-  */
 .name_g{
   transform: translate(100px,-100px); 
   font-size: 16px;
@@ -200,8 +180,6 @@
   width: 150px;
   border-radius: 8px;
 }
-
- 
 .blocoFundo{
   position: absolute; 
   height:250px;
@@ -256,9 +234,6 @@
   width: 100%;
   background-color: #9711ff;
   
-}
-.area_icons a{
-  cursor: pointer;
 }
 .area_icons{
 

@@ -128,7 +128,13 @@
     font-size: 20px;
     font-weight: 700;
   }
- 
+  
+  
+  
+  .card:hover .front-content p {
+    opacity: 0;
+  }
+  
 
   /* .card .palestrante{
     position: absolute;

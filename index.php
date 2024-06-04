@@ -178,16 +178,18 @@ foreach ($palestras as $palestra) {
     </section>
     <section id="sobre">
       <div class="gerentes">
-        <div id="gerenteshub">
-          <img class="move" animation="left" src="src/images/Ana.png"  alt=""> 
-          <h1 class="name_a">Ana Olíria</h1>
-        </div>
-        
-        <div id="gerenteshub">
-          <img class="move gilkaimg " animation="right" src="src/images/Gilka.png" alt="">
-          <h1 class="name_g">Gilka Trevisan</h1>
-        </div>
-        
+
+          
+          <div id="gerenteshub">
+            <img class="move" animation="left" src="src/images/Ana.png"  alt=""> 
+            <h1 class="name_a">Ana Olíria</h1>
+          </div>
+
+          <div id="gerenteshub">
+            <img class="move gilkaimg " animation="right" src="src/images/Gilka.png" alt="">
+            <h1 class="name_g">Gilka Trevisan</h1>
+          </div>
+
       </div>
 
       <div id="testimonials_content">
