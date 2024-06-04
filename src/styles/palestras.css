@@ -33,6 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
   justify-content: end;
 
 }
@@ -50,7 +51,8 @@
 }
 
 .card .nome-palestrante {
-  font-size: 26px;
+  cursor: pointer;
+  font-size: 22px;
   width: 250px;
   display: flex;
   font-weight: 700;
@@ -62,6 +64,7 @@
   right: 0;  
   z-index: 2;
   padding: 5px 15px;
+  text-align: center;
   justify-content: center;
 
   
@@ -108,6 +111,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  cursor: pointer;
 }
 .card .content {
   position: absolute; 
@@ -133,13 +137,39 @@
   font-weight: 700;
 }
 
-.card:hover .content {
+/* AQUI  */
+
+.card.active .content{
   height: 100%;
   padding: 10px;
   width: 100%;
   backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.274);
-  /* transform: translateY(0); */
+  background-color: rgba(0, 0, 0, 0.274); 
+}
+
+
+.card.active .content h1{
+  opacity: 1;
+}
+
+
+.card.active .content .titulo-palestra2{
+  width: 95%;
+  opacity: 1;
+  user-select: none;
+}
+
+
+.card.active .content .ver_palestra{
+  opacity: 1;
+}
+
+/* .card:hover .content {
+  height: 100%;
+  padding: 10px;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.274); 
 }
 .card:hover .content h1{
   opacity: 1;
@@ -151,16 +181,27 @@
 .card:hover .content .ver_palestra{
   opacity: 1;
 }
-
-
-
-.card:hover .front-content {
-  /* transform: translateX(-30%); */
+  */
+.name_g{
+  transform: translate(100px,-100px); 
+  font-size: 16px;
+  padding: 5px;
+  background-color: #9811ffa6;
+  backdrop-filter: blur(5px);
+  width: 180px;
+  border-radius: 8px;
+}
+.name_a{
+  transform: translate(100%,-100px);
+  font-size: 16px; 
+  padding: 5px;
+  background-color: #9811ffa6;
+  backdrop-filter: blur(5px);
+  width: 150px;
+  border-radius: 8px;
 }
 
-.card:hover .front-content p {
-  /* opacity: 0; */
-}
+ 
 .blocoFundo{
   position: absolute; 
   height:250px;
@@ -215,6 +256,9 @@
   width: 100%;
   background-color: #9711ff;
   
+}
+.area_icons a{
+  cursor: pointer;
 }
 .area_icons{
 

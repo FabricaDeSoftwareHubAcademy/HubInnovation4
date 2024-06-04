@@ -14,7 +14,7 @@ foreach ($palestras as $palestra) {
     $results .= '		
             <div class="card-container move" animation="top" href="inscricao.html"> 
              
-            <div class="card">
+            <div class="card" onclick="seeCardDescription(this)">
               <div class="imgs_palestrante" data-carousel=0>
                 <img class="palestrante" src="' . $palestra->foto . '" alt="">
                 <img class="palestrante"
@@ -48,7 +48,7 @@ foreach ($palestras as $palestra) {
     $results .= '
           <div class="card-container move" animation="top" href="inscricao.html"> 
             
-            <div class="card">
+            <div class="card" onclick="seeCardDescription(this)">
               <div class="imgs_palestrante" data-carousel=0>
                 <img class="palestrante" src="' . $palestra->foto . '" alt="">
                 <img class="palestrante"
@@ -200,8 +200,16 @@ foreach ($palestras as $palestra) {
     </section>
     <section id="sobre">
       <div class="gerentes">
-        <img class="move" animation="left" src="src/images/Ana.png" id="gerenteshub" alt="">
-        <img class="move gilkaimg " animation="right" src="src/images/Gilka.png" id="gerenteshub" alt="">
+        <div id="gerenteshub">
+          <img class="move" animation="left" src="src/images/Ana.png"  alt=""> 
+          <h1 class="name_a">Ana Olíria</h1>
+        </div>
+        
+        <div id="gerenteshub">
+          <img class="move gilkaimg " animation="right" src="src/images/Gilka.png" alt="">
+          <h1 class="name_g">Gilka Trevisan</h1>
+        </div>
+        
       </div>
 
       <div id="testimonials_content">
@@ -292,35 +300,7 @@ foreach ($palestras as $palestra) {
 
         <div class="cards-palestrantes">
 
-          <div class="card-container move" animation="top" href="inscricao.html">
-             
-            <div class="card">
-              <div class="imgs_palestrante" data-carousel=0>
-                <img class="palestrante" src="src/images/Thiago.jpg" alt="">
-                <img class="palestrante"
-                  src="https://media.licdn.com/dms/image/C4D12AQE5OPBvIYUuRw/article-cover_image-shrink_720_1280/0/1593273772702?e=2147483647&v=beta&t=3rWo8Zt_UMWdu65-F3x7G0lXapM1bd6pvs1DSZJAB5g"
-                  alt="">
-                <img class="palestrante" src="https://miro.medium.com/v2/resize:fit:700/1*nN4903HEGDRx33s0e1oSUA.jpeg"
-                  alt="">
-                <img class="palestrante"
-                  src="https://uploads.spiritfanfiction.com/historias/capas/202008/o-assassinato-de-cavalao-20237301-170820202319.jpg"
-                  alt="">
-                <img class="palestrante"
-                  src="https://www.creativefabrica.com/wp-content/uploads/2021/03/08/Go-Horse-Graphics-9343870-1.png"
-                  alt="">
-              </div>
-              <div class="front-content">
-                <p class="nome-palestrante">Thiago Almeida</p>
-              </div>
-              <div class="content">
-                <h1>999 VAGAS</h1>
-                <p class="titulo-palestra">GO HORSE 🐴: A Metodologia do Futuro 🚀🚀🚀</p>
-                <p class="titulo-palestra2"></p>
-                <a href="inscricao.html" class="ver_palestra clicavel"><span class="span_btn_inscricao">Ver <i
-                      class="fa-solid fa-arrow-right "></i></span> </a>
-              </div>
-            </div>
-          </div>
+           
           <?= $results ?>
 
 

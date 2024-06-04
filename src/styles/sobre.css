@@ -9,7 +9,11 @@
     
 }
 #gerenteshub{
-    width: 45%;
+  width: 45%;
+}
+#gerenteshub h1{
+  text-align: center;
+  color: white;
 }
 .gerentes{
     display: flex;
@@ -24,6 +28,10 @@
     width: 100%;
     min-width: 350px;
     max-width: 700px;
+}
+#gerenteshub img{
+  height: 95%;
+  width: 100%;
 }
 .section-title {
     color: var(--color-primary-6);

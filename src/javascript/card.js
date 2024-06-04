@@ -6,36 +6,36 @@ card.forEach(e => {
     setInterval(() => {
         moveCard(e,"right")
     },5000)
-    e.addEventListener("mouseenter", () => {
+    // e.addEventListener("mouseenter", () => {
 
-        clearTimeout(timeoutWrite)
-        var title = e.querySelector(".titulo-palestra")
-        var title2 = e.querySelector(".titulo-palestra2")
+    //     clearTimeout(timeoutWrite)
+    //     var title = e.querySelector(".titulo-palestra")
+    //     var title2 = e.querySelector(".titulo-palestra2")
 
-        var textTitle = title.innerHTML
-        title.style.display = "none"
+    //     var textTitle = title.innerHTML
+    //     title.style.display = "none"
 
-        var i = 0
-        var wrote_text = ""
-        function writeText(textTitle){
+    //     var i = 0
+    //     var wrote_text = ""
+    //     function writeText(textTitle){
 
-            wrote_text = wrote_text + textTitle[i]
+    //         wrote_text = wrote_text + textTitle[i]
 
-            if(wrote_text.length < textTitle.length){
+    //         if(wrote_text.length < textTitle.length){
                 
-                title2.innerHTML = wrote_text + "|"
-                timeoutWrite = setTimeout(() => {
-                    writeText(textTitle)
-                },30)
-            } else{ 
-                title2.innerHTML = wrote_text  
-            }
-            i++
-        } 
+    //             title2.innerHTML = wrote_text + "|"
+    //             timeoutWrite = setTimeout(() => {
+    //                 writeText(textTitle)
+    //             },30)
+    //         } else{ 
+    //             title2.innerHTML = wrote_text  
+    //         }
+    //         i++
+    //     } 
     
 
-        writeText(textTitle)
-    })
+    //     writeText(textTitle)
+    // })
      
 })
     
@@ -107,3 +107,42 @@ var moveCard = (e,side) => {
     
 } 
 
+function seeCardDescription(e){
+
+    const allCards = document.querySelectorAll(".card")
+    allCards.forEach(card => {
+        card.classList.remove("active")
+    })
+     
+    e.classList.add("active")
+
+
+    clearTimeout(timeoutWrite)
+        var title = e.querySelector(".titulo-palestra")
+        var title2 = e.querySelector(".titulo-palestra2")
+
+        var textTitle = title.innerHTML
+        title.style.display = "none"
+
+        var i = 0
+        var wrote_text = ""
+        function writeText(textTitle){
+
+            wrote_text = wrote_text + textTitle[i]
+
+            if(wrote_text.length < textTitle.length){
+                
+                title2.innerHTML = wrote_text + "|"
+                timeoutWrite = setTimeout(() => {
+                    writeText(textTitle)
+                },30)
+            } else{ 
+                title2.innerHTML = wrote_text  
+            }
+            i++
+        } 
+    
+
+        writeText(textTitle)
+
+}

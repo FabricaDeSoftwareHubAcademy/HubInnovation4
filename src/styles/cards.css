@@ -66,7 +66,8 @@
   }
   
   .card .nome-palestrante {
-    font-size: 26px;
+    font-size: 22px;
+    text-align: center;
     width: 220px;
     display: flex;
     font-weight: 700;
@@ -127,19 +128,7 @@
     font-size: 20px;
     font-weight: 700;
   }
-  
-  .card:hover .content {
-    transform: translateY(0);
-  }
-  
-  .card:hover .front-content {
-    transform: translateX(-30%);
-  }
-  
-  .card:hover .front-content p {
-    opacity: 0;
-  }
-  
+ 
 
   /* .card .palestrante{
     position: absolute;
