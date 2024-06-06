@@ -121,6 +121,17 @@ class Database{
         }
     }
 
+    
+    public function list_palestrante(){
+        $query ='SELECT palestrante.id_palestrante as id_palestrante,palestrante.foto as foto, 
+		palestrante.nome as nome, palestrante.bio as bio,
+        palestrante.instagram as instagram, palestrante.linkedin as linkedin
+        FROM palestrante';
+        
+        //Método para executar a consulta/query
+        return $this->execute($query);
+    }
+
     public function list_palestra(){
         $query ='SELECT palestra.id_palestra as id_palestra, palestra.titulo as titulo,
         palestra.descricao as descricao, palestra.vagas as vagas, palestra.sala as sala,

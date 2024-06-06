@@ -45,6 +45,31 @@ class Palestrante{
         ->fetchAll(PDO::FETCH_CLASS,self::class);
     }
 
+    public function atualizar(){
+        return (new Database('palestrante'))->update('id_palestrante = '.$this->id_palestrante,[
+            'foto' => $this->foto,
+            'nome' => $this->nome,
+            'bio' => $this->bio,
+            'instagram' => $this->instagram,
+            'linkedin' => $this->linkedin,
+            'id_palestrante' => $this->id_palestrante
+        ]);
+  
+    }
+
+    public static function select_by_id($id){
+        //Instancia uma nova Classe com os dados do ID
+        return (new Database('palestrante'))->select('id_palestrante = '.$id)->fetchObject(self::class);
+   }
+
+        //ADD FUNÇÃO EM PRODUÇÃO
+        public static function listar(){
+            //Consulta as palestras cadastradas para edicao
+            return (new Database('palestrante'))
+            ->list_palestrante()
+            ->fetchAll(PDO::FETCH_CLASS,self::class);
+        }    
+
     public static function filtrar($filter){
         return (new Database('palestrante'))
         ->filter($filter)

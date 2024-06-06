@@ -235,14 +235,13 @@ form.addEventListener("submit",async (e) => {
         return
     }
 
-    if(lgpd2.checked == false){
-        // ja faz a validação se esta checked 
-        allRed()
-        activeModal("LGPD 2 não marcada, marque e tente novamente!",false) 
-        document.querySelector("#btn_cad").disabled = false;
-        return
-    }
-
+    // if(lgpd2.checked == false){
+    //     // ja faz a validação se esta checked 
+    //     allRed()
+    //     activeModal("LGPD 2 não marcada, marque e tente novamente!",false) 
+    //     document.querySelector("#btn_cad").disabled = false;
+    //     return
+    // }
   
     let tmp_token = grecaptcha.getResponse(captchaElement) 
     // https://www.google.com/recaptcha/api/siteverify

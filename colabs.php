@@ -4,7 +4,7 @@ include __DIR__.'/vendor/autoload.php';
 use App\Entity\Colaborador;
 use \App\Session\Login;
 //força login do usuário
-Login::requireLogin();
+// Login::requireLogin();
 
 if(isset($_POST['nome']) && $_POST['matricula']
   && $_POST['email'] && $_POST['senha']){

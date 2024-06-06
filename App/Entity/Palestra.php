@@ -84,7 +84,7 @@ class Palestra{
         return (new Database('palestra'))->filter_palestra_by_id($id)->fetchObject(self::class);
     }
 
-     public static function select_by_id($id){
+    public static function select_by_id($id){
          //Instancia uma nova Classe com os dados do ID
          return (new Database('palestra'))->select('id_palestra = '.$id)->fetchObject(self::class);
     }
