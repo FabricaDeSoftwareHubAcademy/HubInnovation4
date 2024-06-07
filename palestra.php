@@ -6,7 +6,7 @@ use App\Entity\Palestra;
 use App\Entity\Ambiente;
 use \App\Session\Login;
 //força login do usuário
-//Login::requireLogin();
+Login::requireLogin();
 
 $obj = new Ambiente();
 $ambiente = $obj->buscar();

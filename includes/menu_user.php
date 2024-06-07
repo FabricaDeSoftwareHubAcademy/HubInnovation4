@@ -6,16 +6,37 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="<?='./palestrante.php';?>">Palestrantes</a>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Palestrantes
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="<?='./palestrante.php';?>">Cadastrar</a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item" href="<?='./lista_palestrantes.php';?>">Listar Palestrantes</a>
+                  </li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="<?='./palestra.php';?>">Cadastrar Palestra</a>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Palestra
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">        
+                  <li>
+                    <a class="dropdown-item" href="<?='./palestra.php';?>">Cadastrar </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item" href="<?='./lista_palestra.php';?>">Listar Palestra </a>
+                  </li>
+          </ul>
         </li>
-	<li class="nav-item">
-	  <a class="nav-link active" href="<?='./lista_palestra.php';?>">Listar Palestras </a>
-	</li>
-	<li class="nav-item">
+
+        <li class="nav-item">
 	        <a class="nav-link active" href="<?='./consulta_usuario.php';?>"> Consultar Inscritos </a>
 	      </li>
         <li class="nav-item">
